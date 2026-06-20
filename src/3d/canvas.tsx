@@ -1,5 +1,5 @@
 ﻿import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Grid, OrbitControls } from "@react-three/drei";
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
 
 export function ThreeCanvas() {
@@ -14,6 +14,8 @@ export function ThreeCanvas() {
         <OrbitControls />
         <ambientLight intensity={0.5} />
         <ThreeSceneDispatcher />
+
+        <Grid infiniteGrid />
       </Canvas>
     </div>
   );

@@ -1,4 +1,3 @@
-﻿import { Grid } from "@react-three/drei";
 import { useCallback, useMemo } from "react";
 import type { Season } from "@/entities/season";
 import { useSeasonStore } from "@/entities/season";
@@ -95,7 +94,6 @@ function SeasonButtonGroup() {
 export function ThreeSceneHome() {
   return (
     <>
-      <Grid infiniteGrid />
       <SeasonButtonGroup />
     </>
   );
