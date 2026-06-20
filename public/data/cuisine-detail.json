@@ -1,0 +1,178 @@
+{
+  "bom_namul": {
+    "code": "bom_namul",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "hwajeon": {
+    "code": "hwajeon",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "ssukguk": {
+    "code": "ssukguk",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "strawberry_dessert": {
+    "code": "strawberry_dessert",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "naengmyeon": {
+    "code": "naengmyeon",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "samgyetang": {
+    "code": "samgyetang",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "kongguksu": {
+    "code": "kongguksu",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "watermelon_hwachae": {
+    "code": "watermelon_hwachae",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "songpyeon": {
+    "code": "songpyeon",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "grilled_gizzard_shad": {
+    "code": "grilled_gizzard_shad",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "mushroom_jeongol": {
+    "code": "mushroom_jeongol",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "chestnut_rice": {
+    "code": "chestnut_rice",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "seolleongtang": {
+    "code": "seolleongtang",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "tteokguk": {
+    "code": "tteokguk",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "kimchi_jjigae": {
+    "code": "kimchi_jjigae",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  },
+  "hotteok": {
+    "code": "hotteok",
+    "badgeKey": "seasonal",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "pairing", "valueKey": "pairing" }
+    ]
+  }
+}

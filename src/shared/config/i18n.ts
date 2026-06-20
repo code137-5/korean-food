@@ -20,7 +20,7 @@ i18n
       escapeValue: false,
     },
     lng: defaultLanguage,
-    ns: ["season"],
+    ns: ["season", "cuisine-detail"],
     supportedLngs: ["ko", "en"],
     react: {
       useSuspense: false,

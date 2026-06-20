@@ -1,0 +1,258 @@
+{
+  "badges": {
+    "seasonal": "Seasonal Cuisine"
+  },
+  "labels": {
+    "ingredients": "Ingredients",
+    "taste": "Flavor",
+    "occasion": "Best For",
+    "pairing": "Pairs With"
+  },
+  "status": {
+    "loading": "Loading cuisine details",
+    "empty": "No cuisine selected",
+    "error": "Failed to load cuisine details"
+  },
+  "items": {
+    "bom_namul": {
+      "title": "Spring Namul",
+      "subtitle": "Fresh spring greens lightly seasoned for the new season",
+      "paragraphs": [
+        "Spring namul highlights young greens such as wild chives, shepherd's purse, and shoots gathered as the season begins.",
+        "Light seasoning with soy sauce, doenjang, and sesame oil keeps the herbs fragrant and crisp.",
+        "It brings a clean, lightly bitter freshness to the table and helps wake the appetite after winter."
+      ],
+      "info": {
+        "ingredients": "Wild chives · Shepherd's purse · Shoots · Sesame oil · Doenjang",
+        "taste": "Fragrant · Fresh · Gently bitter",
+        "occasion": "Spring meals · Light side dish · Appetite starter",
+        "pairing": "Steamed rice · Doenjang soup · Assorted namul"
+      }
+    },
+    "hwajeon": {
+      "title": "Hwajeon",
+      "subtitle": "Flower-topped rice cakes pan-fried for spring tea tables",
+      "paragraphs": [
+        "Hwajeon is made by pressing edible flower petals onto small rounds of glutinous rice dough.",
+        "The chewy texture and bright petals make it one of the most visual foods of spring.",
+        "It is often served with tea as a delicate seasonal snack."
+      ],
+      "info": {
+        "ingredients": "Glutinous rice flour · Edible flowers · Honey · Oil",
+        "taste": "Chewy · Lightly sweet · Nutty",
+        "occasion": "Spring tea time · Picnic · Traditional snack",
+        "pairing": "Omija tea · Green tea · Honey"
+      }
+    },
+    "ssukguk": {
+      "title": "Mugwort Soup",
+      "subtitle": "A clear spring soup scented with young mugwort",
+      "paragraphs": [
+        "Ssukguk is a warm soup made with tender mugwort, an herb strongly associated with spring in Korea.",
+        "A clear broth or light doenjang base lets the green aroma come forward without heaviness.",
+        "It fits naturally on a home table during the season's change."
+      ],
+      "info": {
+        "ingredients": "Mugwort · Doenjang · Anchovy broth · Tofu",
+        "taste": "Herbal · Savory · Clean finish",
+        "occasion": "Breakfast · Spring soup · Home meal",
+        "pairing": "Barley rice · Kimchi · Grilled fish"
+      }
+    },
+    "strawberry_dessert": {
+      "title": "Strawberry Dessert",
+      "subtitle": "A light dessert built around bright spring berries",
+      "paragraphs": [
+        "Spring strawberries bring vivid sweetness and acidity to simple desserts.",
+        "Cream, milk, or yogurt softens the fruit's brightness while keeping the finish fresh.",
+        "It is an easy way to close a meal with a clear sense of the season."
+      ],
+      "info": {
+        "ingredients": "Strawberries · Cream · Yogurt · Honey",
+        "taste": "Tangy · Sweet · Soft",
+        "occasion": "Dessert · Spring treat · Tea time",
+        "pairing": "Black tea · Yogurt · Vanilla ice cream"
+      }
+    },
+    "naengmyeon": {
+      "title": "Naengmyeon",
+      "subtitle": "Cold broth and buckwheat noodles for summer heat",
+      "paragraphs": [
+        "Naengmyeon is a chilled noodle dish built around icy broth and springy noodles.",
+        "Dongchimi or beef broth gives it a clean savory base, sharpened with vinegar and mustard.",
+        "It is light enough for hot days while still feeling like a complete meal."
+      ],
+      "info": {
+        "ingredients": "Buckwheat noodles · Broth · Dongchimi · Cucumber · Egg",
+        "taste": "Cold · Tangy · Clean umami",
+        "occasion": "Summer lunch · Cooling down · Eating out",
+        "pairing": "Dumplings · Suyuk · Young radish kimchi"
+      }
+    },
+    "samgyetang": {
+      "title": "Samgyetang",
+      "subtitle": "Ginseng chicken soup served as a summer restorative",
+      "paragraphs": [
+        "Samgyetang is made by simmering a young chicken with glutinous rice, ginseng, jujube, and garlic.",
+        "The broth is clear yet deep, and the tender chicken makes the dish deeply satisfying.",
+        "It is closely associated with Korea's hottest summer days as a restorative meal."
+      ],
+      "info": {
+        "ingredients": "Chicken · Ginseng · Glutinous rice · Jujube · Garlic",
+        "taste": "Mild · Deep broth · Herbal aroma",
+        "occasion": "Boknal · Restorative meal · Family dining",
+        "pairing": "Kkakdugi · Salt dip · Ginseng liquor"
+      }
+    },
+    "kongguksu": {
+      "title": "Kongguksu",
+      "subtitle": "Noodles in chilled, nutty soybean broth",
+      "paragraphs": [
+        "Kongguksu is a summer noodle dish served in a cold broth made from finely ground soybeans.",
+        "The soybean broth is creamy and nutty without being heavy.",
+        "Regional preferences for salt or sugar make the dish flexible and personal."
+      ],
+      "info": {
+        "ingredients": "Soybeans · Noodles · Cucumber · Sesame · Salt",
+        "taste": "Nutty · Creamy · Mild",
+        "occasion": "Summer meal · Vegetarian bowl · Cold noodles",
+        "pairing": "Young radish kimchi · Cucumber salad · Fresh geotjeori"
+      }
+    },
+    "watermelon_hwachae": {
+      "title": "Watermelon Hwachae",
+      "subtitle": "A chilled fruit punch for summer desserts",
+      "paragraphs": [
+        "Watermelon hwachae combines watermelon and other fruits in a cold, sweet drink.",
+        "The juicy fruit and chilled liquid make it especially refreshing in hot weather.",
+        "It is simple to prepare and bright enough for summer gatherings."
+      ],
+      "info": {
+        "ingredients": "Watermelon · Soda · Milk · Fruit · Ice",
+        "taste": "Cold · Sweet · Refreshing",
+        "occasion": "Summer dessert · Family gathering · Snack",
+        "pairing": "Rice cakes · Hangwa · Light tea snacks"
+      }
+    },
+    "songpyeon": {
+      "title": "Songpyeon",
+      "subtitle": "Festive rice cakes made with new harvest grains",
+      "paragraphs": [
+        "Songpyeon is a half-moon rice cake filled with sesame, beans, chestnuts, or other sweet fillings.",
+        "Steaming it over pine needles gives the cakes a gentle forest aroma.",
+        "It is one of the symbolic foods of Chuseok, often made and shared by families."
+      ],
+      "info": {
+        "ingredients": "Rice flour · Sesame · Beans · Chestnuts · Pine needles",
+        "taste": "Chewy · Nutty · Light pine aroma",
+        "occasion": "Chuseok · Holiday food · Family gathering",
+        "pairing": "Sikhye · Sujeonggwa · Fruit"
+      }
+    },
+    "grilled_gizzard_shad": {
+      "title": "Grilled Gizzard Shad",
+      "subtitle": "An autumn fish prized for its rich, oily flavor",
+      "paragraphs": [
+        "Gizzard shad becomes especially flavorful in autumn when the fish is rich with oil.",
+        "A simple salt grill makes the skin crisp and keeps the flesh savory.",
+        "It is a seasonal favorite where the ingredient itself carries the dish."
+      ],
+      "info": {
+        "ingredients": "Gizzard shad · Coarse salt · Lemon · Radish",
+        "taste": "Rich · Salty · Deep fish flavor",
+        "occasion": "Autumn specialty · Drinks table · Seasonal fish",
+        "pairing": "Lettuce wraps · Chogochujang · Radish salad"
+      }
+    },
+    "mushroom_jeongol": {
+      "title": "Mushroom Jeongol",
+      "subtitle": "A warm hot pot centered on seasonal mushrooms",
+      "paragraphs": [
+        "Mushroom jeongol simmers several mushrooms, vegetables, and broth together at the table.",
+        "The mushrooms lend aroma and umami to the broth without making it heavy.",
+        "It is well suited to cool autumn evenings and shared meals."
+      ],
+      "info": {
+        "ingredients": "Shiitake · Oyster mushrooms · Enoki · Vegetables · Broth",
+        "taste": "Aromatic · Umami-rich · Warm broth",
+        "occasion": "Autumn dinner · Shared meal · Hot pot",
+        "pairing": "Kalguksu noodles · Rice · Geotjeori"
+      }
+    },
+    "chestnut_rice": {
+      "title": "Chestnut Rice",
+      "subtitle": "Autumn rice cooked with sweet chestnuts",
+      "paragraphs": [
+        "Chestnut rice adds freshly harvested chestnuts to steamed rice for a gentle autumn sweetness.",
+        "The chestnuts become soft and fragrant, making the rice itself feel seasonal.",
+        "It turns a simple home table into a harvest meal."
+      ],
+      "info": {
+        "ingredients": "Rice · Chestnuts · Salt · Water",
+        "taste": "Sweet · Soft · Mild",
+        "occasion": "Autumn home meal · Harvest table · Lunchbox",
+        "pairing": "Pickles · Doenjang jjigae · Roasted gim"
+      }
+    },
+    "seolleongtang": {
+      "title": "Seolleongtang",
+      "subtitle": "Long-simmered ox bone soup for cold days",
+      "paragraphs": [
+        "Seolleongtang is made by simmering ox bones and beef until the broth turns milky and mild.",
+        "Seasoning at the table with salt and scallions keeps the flavor clean.",
+        "It is a comforting winter bowl that warms the body and fills the table."
+      ],
+      "info": {
+        "ingredients": "Ox bones · Beef brisket · Noodles · Scallions · Salt",
+        "taste": "Mild · Deep broth · Tender beef",
+        "occasion": "Winter meal · Hangover soup · Hearty bowl",
+        "pairing": "Kkakdugi · Kimchi · Steamed rice"
+      }
+    },
+    "tteokguk": {
+      "title": "Tteokguk",
+      "subtitle": "Rice cake soup traditionally eaten for the new year",
+      "paragraphs": [
+        "Tteokguk is made with sliced garaetteok simmered in a clear, savory broth.",
+        "Soft rice cakes, broth, and colorful garnishes make it both simple and ceremonial.",
+        "It marks the beginning of the year and is strongly tied to family gatherings."
+      ],
+      "info": {
+        "ingredients": "Rice cakes · Beef broth · Egg · Scallions · Gim",
+        "taste": "Mild · Soft · Clean broth",
+        "occasion": "Seollal · New year meal · Family table",
+        "pairing": "Dumplings · Kimchi · Jeon"
+      }
+    },
+    "kimchi_jjigae": {
+      "title": "Kimchi Jjigae",
+      "subtitle": "A warm stew built from deeply fermented kimchi",
+      "paragraphs": [
+        "Kimchi jjigae is a classic home stew made with aged kimchi, pork, tofu, and aromatics.",
+        "The kimchi's acidity and spice create a deep broth that pairs naturally with rice.",
+        "It is familiar, warming, and welcome in both winter and everyday meals."
+      ],
+      "info": {
+        "ingredients": "Aged kimchi · Pork · Tofu · Scallions · Gochugaru",
+        "taste": "Spicy · Tangy · Deep umami",
+        "occasion": "Home meal · Winter dinner · Rice companion",
+        "pairing": "Steamed rice · Rolled omelet · Gim"
+      }
+    },
+    "hotteok": {
+      "title": "Hotteok",
+      "subtitle": "A sweet filled pancake from winter street stalls",
+      "paragraphs": [
+        "Hotteok is a pan-fried dough filled with brown sugar, cinnamon, and nuts.",
+        "The outside browns while the filling melts into a hot syrup.",
+        "It is a handheld winter snack closely tied to street food memories."
+      ],
+      "info": {
+        "ingredients": "Dough · Brown sugar · Cinnamon · Nuts",
+        "taste": "Sweet · Nutty · Chewy",
+        "occasion": "Winter snack · Street food · Dessert",
+        "pairing": "Hot tea · Milk · Coffee"
+      }
+    }
+  }
+}

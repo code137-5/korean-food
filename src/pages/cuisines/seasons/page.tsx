@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
-import { SEASONS, type Season } from "@/entities/season";
+import {
+  SEASONS,
+  useSeasonCuisineItemsQuery,
+  type Season,
+} from "@/entities/season";
 import { FoodDetail } from "@/widgets/cuisine-detail";
 
 function isSeason(value: string | undefined): value is Season {
@@ -40,7 +44,8 @@ function ProgressStatus() {
 export function SeasonCuisinePage() {
   const { season } = useParams();
   const selectedSeason = isSeason(season) ? season : null;
-  void selectedSeason;
+  const { data: cuisineItems } = useSeasonCuisineItemsQuery(selectedSeason);
+  const selectedCuisineCode = cuisineItems[0]?.code ?? null;
 
   return (
     <>
@@ -48,7 +53,7 @@ export function SeasonCuisinePage() {
         <ProgressStatus />
       </div>
       <div className="absolute right-2 top-2 h-[82%] w-[55%] pointer-events-auto">
-        <FoodDetail />
+        <FoodDetail cuisineCode={selectedCuisineCode} />
         <div className="w-full flex flex-row justify-between">
           <div className="w-30 h-20 bg-amber-500 cursor-pointer"></div>
           <div className="w-30 h-20 bg-amber-500 cursor-pointer"></div>

@@ -1,4 +1,17 @@
-import { ChefHat, CircleDot, HandPlatter, Soup, Sparkles } from "lucide-react";
+import type { ReactNode } from "react";
+import {
+  ChefHat,
+  CircleDot,
+  HandPlatter,
+  Soup,
+  Sparkles,
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
+import {
+  useCuisineDetailQuery,
+  type CuisineDetailIcon,
+  type CuisineDetailMarkerIcon,
+} from "@/entities/cuisine-detail";
 import {
   DetailInfoTable,
   DetailPanel,
@@ -7,43 +20,68 @@ import {
   type DetailInfoRow,
 } from "@/shared/ui/detail-panel";
 
-const detailRows: DetailInfoRow[] = [
-  {
-    icon: <Soup aria-hidden="true" />,
-    label: "주요 재료",
-    value: "소갈비 · 무 · 당근 · 표고버섯 · 밤 · 대추",
-  },
-  {
-    icon: <Sparkles aria-hidden="true" />,
-    label: "맛의 특징",
-    value: "깊은 감칠맛 · 은은한 단맛 · 부드러운 식감",
-  },
-  {
-    icon: <HandPlatter aria-hidden="true" />,
-    label: "추천 상황",
-    value: "잔치 · 기념일 · 손님맞이",
-  },
-  {
-    icon: <ChefHat aria-hidden="true" />,
-    label: "어울리는 곁들임",
-    value: "흰쌀밥 · 나물 반찬 · 맑은 국",
-  },
-];
+const infoIcons: Record<CuisineDetailIcon, ReactNode> = {
+  ingredients: <Soup aria-hidden="true" />,
+  taste: <Sparkles aria-hidden="true" />,
+  occasion: <HandPlatter aria-hidden="true" />,
+  pairing: <ChefHat aria-hidden="true" />,
+};
 
-const paragraphs = [
-  "갈비찜은 소갈비를 간장 베이스의 양념에 오래 조려, 부드러운 식감과 깊은 감칠맛을 완성한 한국의 대표 궁중·잔치 음식이다.",
-  "달콤한 무와 당근, 버섯, 밤, 대추가 어우러져 풍성한 향과 균형 잡힌 맛을 선사하며, 특별한 날 상차림의 품격을 더한다.",
-  "천천히 익혀낸 갈비의 결은 입안에서 부드럽게 풀리고, 은은한 단맛과 짭조름한 양념이 조화롭게 이어진다.",
-];
+const markerIcons: Record<CuisineDetailMarkerIcon, ReactNode> = {
+  circle: <CircleDot aria-hidden="true" />,
+};
 
-export function FoodDetail() {
+type FoodDetailProps = {
+  cuisineCode: string | null;
+};
+
+export function FoodDetail({ cuisineCode }: FoodDetailProps) {
+  const { t } = useTranslation("cuisine-detail");
+  const { data: detail, isError, isLoading } = useCuisineDetailQuery(cuisineCode);
+
+  if (isLoading) {
+    return (
+      <DetailPanel>
+        <p className="m-auto text-xl text-[#ddcfb7]">{t("status.loading")}</p>
+      </DetailPanel>
+    );
+  }
+
+  if (isError) {
+    return (
+      <DetailPanel>
+        <p className="m-auto text-xl text-[#ddcfb7]">{t("status.error")}</p>
+      </DetailPanel>
+    );
+  }
+
+  if (!cuisineCode || !detail) {
+    return (
+      <DetailPanel>
+        <p className="m-auto text-xl text-[#ddcfb7]">{t("status.empty")}</p>
+      </DetailPanel>
+    );
+  }
+
+  const paragraphResult = t(`items.${cuisineCode}.paragraphs`, {
+    returnObjects: true,
+  });
+  const paragraphs = Array.isArray(paragraphResult)
+    ? (paragraphResult as string[])
+    : [];
+  const detailRows: DetailInfoRow[] = detail.infoRows.map((row) => ({
+    icon: infoIcons[row.icon],
+    label: t(`labels.${row.labelKey}`),
+    value: t(`items.${cuisineCode}.info.${row.valueKey}`),
+  }));
+
   return (
     <DetailPanel>
       <DetailPanelHeader
-        eyebrow="Seasonal Cuisine"
-        title="갈비찜"
-        subtitle="정성으로 천천히 빚어낸 서울식 간장상의 깊은 맛"
-        marker={<CircleDot aria-hidden="true" />}
+        eyebrow={t(`badges.${detail.badgeKey}`)}
+        title={t(`items.${cuisineCode}.title`)}
+        subtitle={t(`items.${cuisineCode}.subtitle`)}
+        marker={markerIcons[detail.markerIcon]}
       />
       <DetailPanelBody paragraphs={paragraphs} />
       <DetailInfoTable rows={detailRows} />
