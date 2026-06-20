@@ -1,75 +1,83 @@
-# React + TypeScript + Vite
+# Korean Food
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+사계절별 한식과 계절감을 소개하기 위한 WebGL 기반 3D 전시 웹 프로젝트입니다. 봄, 여름, 가을, 겨울 페이지를 통해 각 계절에 어울리는 한식 콘텐츠를 입체적인 전시 경험으로 탐색할 수 있도록 구성하고 있습니다.
 
-Currently, two official plugins are available:
+## 프로젝트 소개
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+이 프로젝트는 계절별 한식 문화를 시각적으로 소개하는 React 기반 웹 애플리케이션입니다. React Three Fiber(R3F)와 Three.js를 활용해 WebGL 기반의 3D 전시 공간을 구현하고, 메인 3D 화면 위에 라우팅된 페이지를 표시하는 방식으로 구성했습니다.
 
-## React Compiler
+계절별 페이지를 분리하여 봄, 여름, 가을, 겨울에 맞는 한식 콘텐츠를 확장하기 쉽게 만들었으며, 각 페이지는 3D 전시 경험과 결합될 수 있도록 설계했습니다.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 주요 페이지
 
-Note: This will impact Vite dev & build performances.
+- `/` - 메인 페이지
+- `/seasons/spring` - 봄 한식 소개 페이지
+- `/seasons/summer` - 여름 한식 소개 페이지
+- `/seasons/autumn` - 가을 한식 소개 페이지
+- `/seasons/winter` - 겨울 한식 소개 페이지
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Three.js
+- React Three Fiber(R3F)
+- WebGL
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 실행 방법
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+의존성을 설치합니다.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+개발 서버를 실행합니다.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+yarn dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+프로덕션 빌드를 생성합니다.
+
+```bash
+yarn build
+```
+
+빌드 결과를 미리 확인합니다.
+
+```bash
+yarn preview
+```
+
+## 프로젝트 구조
+
+```text
+src
+|-- 3d
+|   `-- canvas.tsx
+|-- app
+|   |-- App.tsx
+|   |-- routes
+|   |   `-- router.tsx
+|   `-- styles
+|       `-- index.css
+`-- pages
+    |-- home
+    |   `-- page.tsx
+    |-- not-found
+    |   `-- NotFoundPage.tsx
+    `-- seasons
+        |-- page.tsx
+        |-- spring
+        |   `-- page.tsx
+        |-- summer
+        |   `-- page.tsx
+        |-- autumn
+        |   `-- page.tsx
+        `-- winter
+            `-- page.tsx
 ```
