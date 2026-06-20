@@ -5,7 +5,8 @@
     "errorDescription": "Try again later or check the data file.",
     "emptyTitle": "Select a Season",
     "emptyDescription": "Click a season object in the 3D scene to see its cuisine details.",
-    "footer": "KOREAN SEASONAL CUISINE"
+    "footer": "KOREAN SEASONAL CUISINE",
+    "viewCuisine": "View Cuisine Details"
   },
   "spring": {
     "label": "Spring",

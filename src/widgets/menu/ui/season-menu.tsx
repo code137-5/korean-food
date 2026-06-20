@@ -1,9 +1,13 @@
 import { useTranslation } from "react-i18next";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { useSeasonCuisinesQuery, useSeasonStore } from "@/entities/season";
 import { SeasonMenuStatus } from "@/widgets/menu/ui/season-menu-status";
 
 export function SeasonMenu() {
   const { t } = useTranslation("season");
+  const navigate = useNavigate();
   const season = useSeasonStore((s) => s.selectedSeason);
   const { data, isError, isLoading } = useSeasonCuisinesQuery();
   const content = season && data ? data[season] : null;
@@ -79,6 +83,15 @@ export function SeasonMenu() {
           <p className="mt-4 text-sm font-semibold tracking-[0.3em] text-stone-500">
             {t("menu.footer")}
           </p>
+          <Button
+            type="button"
+            size="lg"
+            className="mt-6 w-full bg-red-900 text-white hover:bg-red-950"
+            onClick={() => navigate(`/cuisines/seasons/${content.code}`)}
+          >
+            {t("menu.viewCuisine")}
+            <ArrowRight aria-hidden="true" />
+          </Button>
         </footer>
       </article>
     </section>

@@ -5,7 +5,8 @@
     "errorDescription": "잠시 후 다시 시도하거나 데이터 파일을 확인하세요.",
     "emptyTitle": "계절을 선택하세요",
     "emptyDescription": "3D 화면의 계절 오브젝트를 클릭하면 해당 계절의 음식 설명이 표시됩니다.",
-    "footer": "KOREAN SEASONAL CUISINE"
+    "footer": "KOREAN SEASONAL CUISINE",
+    "viewCuisine": "상세 음식 보기"
   },
   "spring": {
     "label": "봄",
