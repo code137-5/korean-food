@@ -1,6 +1,5 @@
-import { useState } from "react";
-import "./App.css";
-import { ThreeCanvas } from "../3d/canvas";
+import "@/app/App.css";
+import { ThreeCanvas } from "@/3d/canvas";
 import { Outlet } from "react-router-dom";
 
 function RoutedWidgets() {
@@ -14,8 +13,6 @@ function RoutedWidgets() {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <RoutedWidgets />

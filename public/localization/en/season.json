@@ -1,0 +1,102 @@
+{
+  "menu": {
+    "loading": "Loading data",
+    "errorTitle": "Failed to load data",
+    "errorDescription": "Try again later or check the data file.",
+    "emptyTitle": "Select a Season",
+    "emptyDescription": "Click a season object in the 3D scene to see its cuisine details.",
+    "footer": "KOREAN SEASONAL CUISINE"
+  },
+  "spring": {
+    "label": "Spring",
+    "title": "Spring Cuisine",
+    "subtitle": "Fresh herbs and bright seasonal aromas introduce the taste of spring.",
+    "items": {
+      "bom_namul": {
+        "title": "Spring Namul",
+        "description": "Fragrant greens such as wild chives, shepherd's purse, and shoots."
+      },
+      "hwajeon": {
+        "title": "Hwajeon",
+        "description": "A traditional flower pancake that captures the feeling of the season."
+      },
+      "ssukguk": {
+        "title": "Mugwort Soup",
+        "description": "A clear spring soup with the gentle aroma of mugwort."
+      },
+      "strawberry_dessert": {
+        "title": "Strawberry Dessert",
+        "description": "A light dessert built around the freshness of spring fruit."
+      }
+    }
+  },
+  "summer": {
+    "label": "Summer",
+    "title": "Summer Cuisine",
+    "subtitle": "Cold noodles and restorative dishes help carry the season's heat.",
+    "items": {
+      "naengmyeon": {
+        "title": "Naengmyeon",
+        "description": "Cold broth and buckwheat noodles that cool down summer heat."
+      },
+      "samgyetang": {
+        "title": "Samgyetang",
+        "description": "A restorative chicken soup simmered with ginseng."
+      },
+      "kongguksu": {
+        "title": "Kongguksu",
+        "description": "Noodles served in a chilled, nutty soybean broth."
+      },
+      "watermelon_hwachae": {
+        "title": "Watermelon Hwachae",
+        "description": "A refreshing fruit punch enjoyed as a summer dessert."
+      }
+    }
+  },
+  "autumn": {
+    "label": "Autumn",
+    "title": "Autumn Cuisine",
+    "subtitle": "Deep flavors and abundant harvest ingredients define autumn meals.",
+    "items": {
+      "songpyeon": {
+        "title": "Songpyeon",
+        "description": "A festive rice cake made with new grains and sweet fillings."
+      },
+      "grilled_gizzard_shad": {
+        "title": "Grilled Gizzard Shad",
+        "description": "A richly flavored seasonal fish especially enjoyed in autumn."
+      },
+      "mushroom_jeongol": {
+        "title": "Mushroom Jeongol",
+        "description": "A warm hot pot that highlights the aroma of seasonal mushrooms."
+      },
+      "chestnut_rice": {
+        "title": "Chestnut Rice",
+        "description": "Rice cooked with sweet chestnuts for an autumn table."
+      }
+    }
+  },
+  "winter": {
+    "label": "Winter",
+    "title": "Winter Cuisine",
+    "subtitle": "Hot broths and beloved snacks bring warmth to the cold season.",
+    "items": {
+      "seolleongtang": {
+        "title": "Seolleongtang",
+        "description": "A deep, mild ox bone soup slowly simmered for comfort."
+      },
+      "tteokguk": {
+        "title": "Tteokguk",
+        "description": "Rice cake soup traditionally enjoyed for the new year."
+      },
+      "kimchi_jjigae": {
+        "title": "Kimchi Jjigae",
+        "description": "A warm stew built from the rich flavor of aged kimchi."
+      },
+      "hotteok": {
+        "title": "Hotteok",
+        "description": "A sweet filled winter street snack."
+      }
+    }
+  }
+}

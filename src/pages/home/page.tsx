@@ -1,4 +1,4 @@
-import { LayoutMenu } from "./layout/menu";
+import { LayoutMenu } from "@/pages/home/layout/menu";
 
 export function HomePage() {
   return (

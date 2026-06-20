@@ -1,0 +1,102 @@
+{
+  "menu": {
+    "loading": "데이터를 불러오는 중입니다",
+    "errorTitle": "데이터를 불러오지 못했습니다",
+    "errorDescription": "잠시 후 다시 시도하거나 데이터 파일을 확인하세요.",
+    "emptyTitle": "계절을 선택하세요",
+    "emptyDescription": "3D 화면의 계절 오브젝트를 클릭하면 해당 계절의 음식 설명이 표시됩니다.",
+    "footer": "KOREAN SEASONAL CUISINE"
+  },
+  "spring": {
+    "label": "봄",
+    "title": "봄의 음식",
+    "subtitle": "새로 돋는 나물과 산뜻한 향이 어우러지는 계절의 미식을 소개한다.",
+    "items": {
+      "bom_namul": {
+        "title": "봄나물",
+        "description": "달래, 냉이, 두릅처럼 향긋한 재료로 시작하는 봄의 맛"
+      },
+      "hwajeon": {
+        "title": "화전",
+        "description": "꽃잎을 올려 부쳐내는 계절감 있는 전통 간식"
+      },
+      "ssukguk": {
+        "title": "쑥국",
+        "description": "은은한 쑥 향과 맑은 국물이 어우러지는 봄철 음식"
+      },
+      "strawberry_dessert": {
+        "title": "딸기 디저트",
+        "description": "봄 과일의 산뜻함을 담은 가벼운 후식"
+      }
+    }
+  },
+  "summer": {
+    "label": "여름",
+    "title": "여름의 음식",
+    "subtitle": "무더위를 식히는 시원한 국물과 기운을 보태는 보양식을 담았다.",
+    "items": {
+      "naengmyeon": {
+        "title": "냉면",
+        "description": "차가운 육수와 메밀면으로 더위를 식히는 대표 음식"
+      },
+      "samgyetang": {
+        "title": "삼계탕",
+        "description": "닭과 인삼을 고아 여름철 기운을 보태는 보양식"
+      },
+      "kongguksu": {
+        "title": "콩국수",
+        "description": "고소한 콩 국물과 면이 어우러지는 시원한 한 그릇"
+      },
+      "watermelon_hwachae": {
+        "title": "수박 화채",
+        "description": "과일과 차가운 음료로 즐기는 여름 후식"
+      }
+    }
+  },
+  "autumn": {
+    "label": "가을",
+    "title": "가을의 음식",
+    "subtitle": "수확의 계절에 어울리는 깊은 맛과 풍성한 재료의 음식을 모았다.",
+    "items": {
+      "songpyeon": {
+        "title": "송편",
+        "description": "햇곡식과 소를 넣어 빚는 명절의 대표 떡"
+      },
+      "grilled_gizzard_shad": {
+        "title": "전어구이",
+        "description": "고소한 기름기가 올라 가을에 특히 즐기는 생선구이"
+      },
+      "mushroom_jeongol": {
+        "title": "버섯전골",
+        "description": "제철 버섯의 향과 따뜻한 국물이 어우러지는 음식"
+      },
+      "chestnut_rice": {
+        "title": "밤밥",
+        "description": "달큰한 밤을 넣어 지은 가을철 밥상"
+      }
+    }
+  },
+  "winter": {
+    "label": "겨울",
+    "title": "겨울의 음식",
+    "subtitle": "차가운 계절에 몸을 데우는 국물과 오래 사랑받아 온 겨울 간식을 담았다.",
+    "items": {
+      "seolleongtang": {
+        "title": "설렁탕",
+        "description": "오래 고아낸 깊고 담백한 국물로 사랑받는 보양식"
+      },
+      "tteokguk": {
+        "title": "떡국",
+        "description": "맑은 국물과 떡을 담아 새해에 즐기는 대표 음식"
+      },
+      "kimchi_jjigae": {
+        "title": "김치찌개",
+        "description": "묵은지의 깊은 맛으로 완성되는 따뜻한 찌개"
+      },
+      "hotteok": {
+        "title": "호떡",
+        "description": "달콤한 속을 품은 겨울 거리 간식"
+      }
+    }
+  }
+}

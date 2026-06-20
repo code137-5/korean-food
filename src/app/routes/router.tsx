@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
-import NotFoundPage from "../../pages/not-found/NotFoundPage";
-import { HomePage } from "../../pages/home/page";
-import { SeasonsPage } from "../../pages/seasons/page";
-import { SpringPage } from "../../pages/seasons/spring/page";
-import { AutumnPage } from "../../pages/seasons/autumn/page";
-import { SummerPage } from "../../pages/seasons/summer/page";
-import { WinterPage } from "../../pages/seasons/winter/page";
+import App from "@/app/App";
+import NotFoundPage from "@/pages/not-found/NotFoundPage";
+import { HomePage } from "@/pages/home/page";
+import { SeasonsPage } from "@/pages/seasons/page";
+import { SpringPage } from "@/pages/seasons/spring/page";
+import { AutumnPage } from "@/pages/seasons/autumn/page";
+import { SummerPage } from "@/pages/seasons/summer/page";
+import { WinterPage } from "@/pages/seasons/winter/page";
+import { SeasonCuisinePage } from "@/pages/cuisines/seasons/page";
+import type { ThreeSceneType } from "@/3d/scene/types";
 
 const basename =
   import.meta.env.BASE_URL === "/"
@@ -19,11 +21,23 @@ export const router = createBrowserRouter(
       path: "/",
       element: <App />,
       children: [
-        { index: true, element: <HomePage />, errorElement: <NotFoundPage /> },
+        {
+          index: true,
+          element: <HomePage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "home" satisfies ThreeSceneType },
+        },
+        {
+          path: "cuisines/seasons/:season",
+          element: <SeasonCuisinePage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "cuisine" satisfies ThreeSceneType },
+        },
         {
           path: "seasons",
           element: <SeasonsPage />,
           errorElement: <NotFoundPage />,
+          handle: { scene: "home" satisfies ThreeSceneType },
           children: [
             {
               path: "spring",

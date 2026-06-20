@@ -1,4 +1,4 @@
-import { SeasonMenu } from "../../../widgets/menu";
+import { SeasonMenu } from "@/widgets/menu";
 
 export function LayoutMenu() {
   return (

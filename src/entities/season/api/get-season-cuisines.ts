@@ -1,4 +1,4 @@
-import type { SeasonCuisineMap } from "../model/types";
+import type { SeasonCuisineMap } from "@/entities/season/model/types";
 
 export async function getSeasonCuisines(): Promise<SeasonCuisineMap> {
   const response = await fetch(

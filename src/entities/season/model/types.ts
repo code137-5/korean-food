@@ -3,14 +3,11 @@ export type Season = "spring" | "summer" | "autumn" | "winter";
 export const SEASONS: Season[] = ["spring", "summer", "autumn", "winter"];
 
 export type FoodItem = {
-  title: string;
-  description: string;
+  code: string;
 };
 
 export type SeasonCuisine = {
-  label: string;
-  title: string;
-  subtitle: string;
+  code: Season;
   items: FoodItem[];
 };
 
