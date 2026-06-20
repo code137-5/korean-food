@@ -1,8 +1,10 @@
 {
   "badges": {
+    "interactive": "Interactive Cuisine",
     "seasonal": "Seasonal Cuisine"
   },
   "labels": {
+    "craft": "Bibim Craft",
     "ingredients": "Ingredients",
     "taste": "Flavor",
     "occasion": "Best For",
@@ -14,6 +16,21 @@
     "error": "Failed to load cuisine details"
   },
   "items": {
+    "bibimbap": {
+      "title": "Bibimbap",
+      "subtitle": "A mixed rice bowl completed with colorful namul toppings",
+      "paragraphs": [
+        "Bibimbap is one of Korea's signature rice bowls, served with assorted namul, meat, egg, gochujang, and sesame oil.",
+        "Each topping is prepared separately so its color, aroma, and texture remain distinct before everything is mixed together.",
+        "When paired with a craft feature, users can place namul on the rice themselves and experience how arrangement and mixing complete the dish."
+      ],
+      "info": {
+        "ingredients": "Rice · Namul · Gochujang · Sesame oil · Egg",
+        "taste": "Nutty · Spicy · Layered textures",
+        "occasion": "Rice bowl meal · Interactive menu · Korean food introduction",
+        "craft": "Choose namul · Arrange toppings · Complete your own bibimbap"
+      }
+    },
     "bom_namul": {
       "title": "Spring Namul",
       "subtitle": "Fresh spring greens lightly seasoned for the new season",

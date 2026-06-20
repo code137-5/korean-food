@@ -1,4 +1,15 @@
 {
+  "bibimbap": {
+    "code": "bibimbap",
+    "badgeKey": "interactive",
+    "markerIcon": "circle",
+    "infoRows": [
+      { "icon": "ingredients", "labelKey": "ingredients", "valueKey": "ingredients" },
+      { "icon": "taste", "labelKey": "taste", "valueKey": "taste" },
+      { "icon": "occasion", "labelKey": "occasion", "valueKey": "occasion" },
+      { "icon": "pairing", "labelKey": "craft", "valueKey": "craft" }
+    ]
+  },
   "bom_namul": {
     "code": "bom_namul",
     "badgeKey": "seasonal",

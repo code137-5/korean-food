@@ -1,1 +1,1 @@
-﻿export type ThreeSceneType = "home" | "cuisine";
+﻿export type ThreeSceneType = "home" | "cuisine" | "bibim" | "bibim.craft";

@@ -18,7 +18,8 @@ export function ThreeSceneDispatcher() {
     case "cuisine":
       return <ThreeSceneCuisine />;
     case "home":
-    default:
       return <ThreeSceneHome />;
+    default:
+      return null;
   }
 }

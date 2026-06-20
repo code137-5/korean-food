@@ -9,6 +9,8 @@ import { SummerPage } from "@/pages/seasons/summer/page";
 import { WinterPage } from "@/pages/seasons/winter/page";
 import { SeasonCuisinePage } from "@/pages/cuisines/seasons/page";
 import type { ThreeSceneType } from "@/3d/scene/types";
+import { BibimCraftPage } from "@/pages/cuisines/bibim/craft/page";
+import { BibimCuisinePage } from "@/pages/cuisines/bibim/page";
 
 const basename =
   import.meta.env.BASE_URL === "/"
@@ -32,6 +34,18 @@ export const router = createBrowserRouter(
           element: <SeasonCuisinePage />,
           errorElement: <NotFoundPage />,
           handle: { scene: "cuisine" satisfies ThreeSceneType },
+        },
+        {
+          path: "cuisines/bibim",
+          element: <BibimCuisinePage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "bibim" satisfies ThreeSceneType },
+        },
+        {
+          path: "cuisines/bibim/craft",
+          element: <BibimCraftPage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "bibim.craft" satisfies ThreeSceneType },
         },
         {
           path: "seasons",
