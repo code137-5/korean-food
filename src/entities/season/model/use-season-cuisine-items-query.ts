@@ -1,6 +1,8 @@
 import type { FoodItem, Season, SeasonCuisine } from "@/entities/season";
 import { useSeasonCuisinesQuery } from "@/entities/season/model/use-season-cuisines-query";
 
+const EMPTY_FOOD_ITEMS: FoodItem[] = [];
+
 type UseSeasonCuisineItemsQueryResult = Omit<
   ReturnType<typeof useSeasonCuisinesQuery>,
   "data"
@@ -17,7 +19,7 @@ export function useSeasonCuisineItemsQuery(
 
   return {
     ...query,
-    data: seasonCuisine?.items ?? [],
+    data: seasonCuisine?.items ?? EMPTY_FOOD_ITEMS,
     seasonCuisine,
   };
 }
