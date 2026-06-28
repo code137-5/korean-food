@@ -11,6 +11,7 @@ import { SeasonCuisinePage } from "@/pages/cuisines/seasons/page";
 import type { ThreeSceneType } from "@/3d/scene/types";
 import { BibimCraftPage } from "@/pages/cuisines/bibim/craft/page";
 import { BibimCuisinePage } from "@/pages/cuisines/bibim/page";
+import { UITestBedPage } from "@/pages/ui-test-bed/page";
 
 const basename =
   import.meta.env.BASE_URL === "/"
@@ -74,6 +75,12 @@ export const router = createBrowserRouter(
               errorElement: <NotFoundPage />,
             },
           ],
+        },
+        {
+          path: "ui-test-bed",
+          element: <UITestBedPage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "home" satisfies ThreeSceneType },
         },
         /* {
           path: "animations",

@@ -27,6 +27,138 @@
   }
 }
 
+@layer align {
+  .text-align {
+    display: flex;
+    /* justify-content: center; Horizontally centers the text */
+    align-items: center;     /* Vertically centers the text */
+
+  }
+}
+
+@layer components{
+
+  .ui-button-large {
+    border-image-source: url("/ui/button-default.png");
+    border-image-slice: 79 88 88 86 fill;
+    border-image-width: 20px 22px 22px 20px;
+    min-height: 42px;
+    min-width: 42px;
+    border-image-repeat: stretch;
+  }
+
+  .ui-button-small {
+    border-image-source: url("/ui/button-default.png");
+    border-image-slice: 79 88 88 86 fill;
+    border-image-width: 10px 11px 11px 10px;
+    min-height: 22px;
+    min-width: 22px;
+    border-image-repeat: stretch;
+  }
+
+  .ui-button-brignt {
+    filter: brightness(300%) saturate(50%);
+  }
+
+  .ui-button:hover{
+    filter : brightness(225%) saturate(125%);
+    cursor: pointer;
+
+  }
+
+  .ui-panel-black {
+    border-image-source: url("/ui/panel-golden.png");
+    border-image-slice: 79 88 88 86 fill;
+    border-image-width: 20px 22px 22px 20px;
+    min-height: 44px;
+    min-width: 44px;
+    border-image-repeat: stretch;
+  }
+  
+  .ui-panel-dark {
+    border-image-source: url("/ui/panel-dark.png");
+    border-image-slice: 120 127 120 117 fill;
+    border-image-width: 20px 22px 20px 19px;
+    min-height: 42px;
+    min-width: 42px;
+    border-image-repeat: stretch;
+  }
+
+  .ui-background-tmp {
+    
+    background-image: url("/ui/background_tmp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .ui-panel-paper-golden {
+  }
+  
+  .ui-panel-paper-golden:hover {
+    border-image-source: url("/ui/panel-paper-gold-border.png");
+    border-image-slice:  55 55 52 52 fill;
+    border-image-width: 5px 5px 4px 4px;
+    min-height: 14px;
+    min-width: 14px;
+    border-image-repeat: stretch;
+
+    border-radius: 8px;
+    background-color: #121212; /* Dark backgrounds maximize the shine */
+    
+    /* Syntax: x-offset y-offset blur spread color */
+    box-shadow: 
+      0 0 2px #FFD700,       /* Sharp inner core */
+      0 0 10px #FFD700,      /* Medium inner glow */
+      0 0 10px #FFD700,      /* Wide ambient shine */
+      inset 0 0 3px #FFD700; /* Internal edge reflection */
+  }
+
+
+  .ui-panel-paper {
+    border-image-source: url("/ui/panel-paper.png");
+    border-image-slice: 30 41 46 40  fill;
+    border-image-width: 3px 4px 4px 4px;
+    min-height: 27px;
+    min-width: 27px;
+    border-image-repeat: stretch;
+  }
+
+  
+  .ui-panel-felt {
+    border-image-source: url("/ui/panel-felt.png");
+    border-image-slice: 20 30 25 18 fill;
+    border-image-width: 20px 30px 25px 18px;
+    min-height: 50px;
+    min-width: 50px;
+    border-image-repeat: stretch;
+  }
+
+  
+  
+  .ui-panel-ink {
+    background-image: url("/ui/panel-ink.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+  }
+
+  .ui-panel-beige {
+    background-image: url("/ui/panel-beige.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    width:414px;
+    height: 96px;
+  }
+
+
+
+
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Geist Variable', sans-serif;
