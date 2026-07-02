@@ -1,21 +1,24 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { HTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
 
-type CuisineNavigationProps = {
+interface CuisineNavigationProps extends HTMLAttributes<HTMLDivElement> {
   selectedIndex: number;
   itemCount: number;
   onPrevious: () => void;
   onNext: () => void;
-};
+}
 
 export function CuisineNavigation({
   selectedIndex,
   itemCount,
+  className,
   onPrevious,
   onNext,
 }: CuisineNavigationProps) {
   return (
-    <div className="w-full flex flex-row justify-between">
+    <div className={cn(className, "w-full flex flex-row justify-between")}>
       <Button
         type="button"
         variant="secondary"

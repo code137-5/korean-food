@@ -6,7 +6,7 @@ import { LanguageToggle } from "@/app/ui/language-toggle";
 function RoutedWidgets() {
   return (
     <>
-      <div className="absolute w-full h-full left-0 right-0 z-10 pointer-events-none">
+      <div className="absolute overflow-hidden w-full h-full left-0 right-0 z-10 pointer-events-none">
         <Outlet />
         <div className="absolute bottom-6 left-6">
           <LanguageToggle />

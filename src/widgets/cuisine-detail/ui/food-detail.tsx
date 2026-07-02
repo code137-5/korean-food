@@ -1,11 +1,5 @@
 import type { ReactNode } from "react";
-import {
-  ChefHat,
-  CircleDot,
-  HandPlatter,
-  Soup,
-  Sparkles,
-} from "lucide-react";
+import { ChefHat, CircleDot, HandPlatter, Soup, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   useCuisineDetailQuery,
@@ -37,7 +31,11 @@ type FoodDetailProps = {
 
 export function FoodDetail({ cuisineCode }: FoodDetailProps) {
   const { t } = useTranslation("cuisine-detail");
-  const { data: detail, isError, isLoading } = useCuisineDetailQuery(cuisineCode);
+  const {
+    data: detail,
+    isError,
+    isLoading,
+  } = useCuisineDetailQuery(cuisineCode);
 
   if (isLoading) {
     return (
@@ -76,15 +74,17 @@ export function FoodDetail({ cuisineCode }: FoodDetailProps) {
   }));
 
   return (
-    <DetailPanel>
-      <DetailPanelHeader
-        eyebrow={t(`badges.${detail.badgeKey}`)}
-        title={t(`items.${cuisineCode}.title`)}
-        subtitle={t(`items.${cuisineCode}.subtitle`)}
-        marker={markerIcons[detail.markerIcon]}
-      />
-      <DetailPanelBody paragraphs={paragraphs} />
-      <DetailInfoTable rows={detailRows} />
-    </DetailPanel>
+    <div className="relative w-full h-full">
+      <DetailPanel>
+        <DetailPanelHeader
+          eyebrow={t(`badges.${detail.badgeKey}`)}
+          title={t(`items.${cuisineCode}.title`)}
+          subtitle={t(`items.${cuisineCode}.subtitle`)}
+          marker={markerIcons[detail.markerIcon]}
+        />
+        <DetailPanelBody paragraphs={paragraphs} />
+        <DetailInfoTable rows={detailRows} />
+      </DetailPanel>
+    </div>
   );
 }

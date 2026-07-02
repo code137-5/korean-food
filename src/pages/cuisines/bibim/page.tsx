@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { TexturedPanel } from "@/shared/ui/textured-ui";
 import { FoodDetail } from "@/widgets/cuisine-detail";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +20,10 @@ export function BibimCuisinePage() {
           홈으로
         </Button>
       </div>
-      <div className="absolute right-2 top-2 h-[82%] w-[55%] pointer-events-auto">
+      <TexturedPanel
+        variant="ink"
+        className="absolute -right-6 h-[95%] w-[60%] px-36 pt-16 pb-20 pointer-events-auto"
+      >
         <FoodDetail cuisineCode={"bibimbap"} />
         <Button
           type="button"
@@ -30,7 +34,7 @@ export function BibimCuisinePage() {
         >
           비빔밥 만들기
         </Button>
-      </div>
+      </TexturedPanel>
     </>
   );
 }

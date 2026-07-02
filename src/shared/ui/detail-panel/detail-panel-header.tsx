@@ -17,14 +17,14 @@ export function DetailPanelHeader({
 }: DetailPanelHeaderProps) {
   return (
     <header className="text-center">
-      {eyebrow ? (
+      {/* {eyebrow ? (
         <Badge
           variant="outline"
           className="mb-5 border-[#9f793e]/80 bg-[#20160d]/70 px-3 py-1 text-[#d7ae67]"
         >
           {eyebrow}
         </Badge>
-      ) : null}
+      ) : null} */}
 
       <h1 className="text-7xl font-semibold tracking-[0.08em] text-[#f3ead7]">
         {title}
