@@ -8,7 +8,7 @@ import { AutumnPage } from "@/pages/seasons/autumn/page";
 import { SummerPage } from "@/pages/seasons/summer/page";
 import { WinterPage } from "@/pages/seasons/winter/page";
 import { SeasonCuisinePage } from "@/pages/cuisines/seasons/page";
-import type { ThreeSceneType } from "@/3d/scene/types";
+import type { ThreeSceneType } from "@/3d/scene/model";
 import { BibimCraftPage } from "@/pages/cuisines/bibim/craft/page";
 import { BibimCuisinePage } from "@/pages/cuisines/bibim/page";
 import { UITestBedPage } from "@/pages/ui-test-bed/page";

@@ -1,43 +1,10 @@
-﻿import { Canvas, useThree } from "@react-three/fiber";
+﻿import { Canvas } from "@react-three/fiber";
 import { Grid, OrbitControls, useGLTF } from "@react-three/drei";
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
-import { useEffect } from "react";
-import {
-  PerspectiveCamera,
-  PCFSoftShadowMap,
-  NeutralToneMapping,
-  SRGBColorSpace,
-} from "three";
+import { PCFSoftShadowMap, NeutralToneMapping, SRGBColorSpace } from "three";
 import { TexturedScreen } from "@/shared/ui/textured-ui";
-
-function ThreeCamera() {
-  const { camera, size } = useThree();
-  useEffect(() => {
-    console.log(camera);
-    if (!camera || camera.type !== "PerspectiveCamera") return;
-
-    const persCamera = camera as PerspectiveCamera;
-
-    const width = size.width;
-    const height = size.height;
-
-    persCamera.setViewOffset(
-      width,
-      height,
-      width / 4,
-      -height / 7,
-      width,
-      height,
-    );
-
-    /*     const persCamera = camera as PerspectiveCamera;
-    persCamera.filmGauge = 150;
-    persCamera.filmOffset = 100;
-    persCamera.updateProjectionMatrix(); */
-  }, [camera, size]);
-
-  return null;
-}
+import { ThreeSceneCamera } from "./scene/scene-camera";
+import { useCurrentThreeScene } from "./scene/model";
 
 function ThreeFood() {
   const model = useGLTF("/3d/foods/Pressed Flower Coasters.glb");
@@ -46,6 +13,8 @@ function ThreeFood() {
 }
 
 export function ThreeCanvas() {
+  const scene = useCurrentThreeScene();
+
   return (
     <div className="relative block w-full h-full">
       <TexturedScreen className="absolute p-4 left-0 right-0 w-full h-full flex flex-row gap-6 justify-start" />
@@ -91,8 +60,8 @@ export function ThreeCanvas() {
         <ambientLight intensity={2} color={"#bad8ff"} />
         <OrbitControls />
         <ambientLight intensity={0.5} />
-        <ThreeSceneDispatcher />
-        <ThreeCamera />
+        <ThreeSceneDispatcher scene={scene} />
+        <ThreeSceneCamera scene={scene} />
 
         <Grid infiniteGrid />
         <ThreeFood />
