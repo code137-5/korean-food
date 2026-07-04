@@ -24,7 +24,14 @@ export function TexturedPanel({
   ...props
 }: TexturedPanelProps) {
   return (
-    <div className={cn(variantClassName[variant], className)} {...props}>
+    <div
+      className={cn(
+        variantClassName[variant],
+        className,
+        "pointer-events-none",
+      )}
+      {...props}
+    >
       {children}
     </div>
   );

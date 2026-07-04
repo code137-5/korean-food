@@ -46,6 +46,16 @@
     min-width: 42px;
     border-image-repeat: stretch;
   }
+  
+  .ui-textured-button-md {
+    border-image-source: url("/ui/button-default.png");
+    border-image-slice: 79 88 88 86 fill;
+    border-image-width: 15px 16px 16px 15px;
+    min-height: 32px;
+    min-width: 32px;
+    border-image-repeat: stretch;
+  }
+
 
   .ui-textured-button-sm {
     border-image-source: url("/ui/button-default.png");

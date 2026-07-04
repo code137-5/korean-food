@@ -18,7 +18,12 @@ export function CuisineNavigation({
   onNext,
 }: CuisineNavigationProps) {
   return (
-    <div className={cn(className, "w-full flex flex-row justify-between")}>
+    <div
+      className={cn(
+        className,
+        "w-full flex flex-row justify-between pointer-events-auto",
+      )}
+    >
       <Button
         type="button"
         variant="secondary"
