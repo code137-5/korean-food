@@ -104,7 +104,7 @@
   .ui-paper-tile-frame {
   }
   
-  .ui-paper-tile-frame:hover {
+  .ui-paper-tile-frame-selected {
     border-image-source: url("/ui/panel-paper-gold-border.png");
     border-image-slice:  55 55 52 52 fill;
     border-image-width: 5px 5px 4px 4px;

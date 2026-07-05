@@ -1,27 +1,34 @@
 import { useIngredientsByCategoryQuery } from "@/entities/ingredient";
 import { useBibimCraftStore } from "../../model/bibim-craft-store";
-import { PaperTile } from "@/shared/ui/textured-ui";
-import { useTranslation } from "react-i18next";
+import { IngredientTile } from "./ingredient-tile";
+import { useEffect } from "react";
 
 export function IngredientTileGrid() {
-  const { t } = useTranslation("ingredient");
   const selectedIngredientCategoryCode = useBibimCraftStore(
     (state) => state.selectedIngredientCategoryCode,
+  );
+  const registerIngredientFlags = useBibimCraftStore(
+    (state) => state.registerIngredientFlags,
   );
   const { data: ingredients } = useIngredientsByCategoryQuery(
     selectedIngredientCategoryCode,
   );
+  const ingredientIdsKey = ingredients
+    .map((ingredient) => ingredient.id)
+    .join("|");
+
+  useEffect(() => {
+    if (!ingredientIdsKey) {
+      return;
+    }
+
+    registerIngredientFlags(ingredientIdsKey.split("|"));
+  }, [ingredientIdsKey, registerIngredientFlags]);
 
   return (
     <div className="grid grid-cols-4 content-start gap-1">
       {ingredients.map((ingredient) => (
-        <PaperTile
-          key={ingredient.id}
-          className="block w-28 aspect-2/3"
-          contentClassName="flex items-center justify-center px-2 text-center text-sm font-semibold leading-5 text-[#3f2f1f]"
-        >
-          {t(ingredient.nameKey)}
-        </PaperTile>
+        <IngredientTile key={ingredient.id} ingredient={ingredient} />
       ))}
     </div>
   );
