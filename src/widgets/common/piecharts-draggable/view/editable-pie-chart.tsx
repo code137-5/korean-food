@@ -16,7 +16,6 @@ import {
 import type { EditablePieChartProps } from "../model/types";
 import { BoundaryHandles } from "./boundary-handles";
 import { PieSliceShape } from "./pie-slice-shape";
-import { ValueList } from "./value-list";
 
 export function EditablePieChart(props: EditablePieChartProps) {
   const chart = useEditablePieChart(props);
@@ -71,8 +70,6 @@ export function EditablePieChart(props: EditablePieChartProps) {
         onPointerUp={chart.stopBoundaryDragging}
         onStartDrag={chart.startBoundaryDragging}
       />
-
-      <ValueList data={chart.data} total={chart.total} />
     </div>
   );
 }
