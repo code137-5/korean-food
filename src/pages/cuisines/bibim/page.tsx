@@ -29,7 +29,7 @@ export function BibimCuisinePage() {
           type="button"
           variant="secondary"
           size="lg"
-          className="border border-[#9f793e]/70 bg-[#20160d]/80 text-[#e9dcc6] hover:bg-[#2a1d11]"
+          className="border pointer-events-auto border-[#9f793e]/70 bg-[#20160d]/80 text-[#e9dcc6] hover:bg-[#2a1d11]"
           onClick={() => navigate("/cuisines/bibim/craft")}
         >
           비빔밥 만들기

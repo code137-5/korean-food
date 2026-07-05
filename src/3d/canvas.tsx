@@ -1,7 +1,14 @@
 ﻿import { Canvas } from "@react-three/fiber";
-import { Grid, OrbitControls, useGLTF } from "@react-three/drei";
+import {
+  ContactShadows,
+  Environment,
+  Grid,
+  Lightformer,
+  OrbitControls,
+  useGLTF,
+} from "@react-three/drei";
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
-import { PCFSoftShadowMap, NeutralToneMapping, SRGBColorSpace } from "three";
+import { ACESFilmicToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
 import { TexturedScreen } from "@/shared/ui/textured-ui";
 import { ThreeSceneCamera } from "./scene/scene-camera";
 import { useCurrentThreeScene } from "./scene/model";
@@ -25,11 +32,12 @@ export function ThreeCanvas() {
           enabled: true,
           type: PCFSoftShadowMap,
         }}
+        dpr={[1, 2]}
         gl={{
           antialias: true,
           powerPreference: "high-performance",
-          toneMapping: NeutralToneMapping,
-          toneMappingExposure: 1,
+          toneMapping: ACESFilmicToneMapping,
+          toneMappingExposure: 1.05,
           outputColorSpace: SRGBColorSpace,
         }}
         camera={{
@@ -41,7 +49,7 @@ export function ThreeCanvas() {
       >
         <directionalLight
           color={"#fff2cc"}
-          intensity={4}
+          intensity={4.5}
           position={[-3.464, 4.0, 6.0]}
           lookAt={[0, 0, 0]}
           castShadow
@@ -57,12 +65,40 @@ export function ThreeCanvas() {
           shadow-radius={4}
           shadow-blurSamples={8}
         />
-        <ambientLight intensity={2} color={"#bad8ff"} />
+        {/*         <Environment resolution={512}>
+          <Lightformer
+            intensity={3}
+            color="#fff4d8"
+            position={[-3, 4, 5]}
+            scale={[4, 4, 1]}
+          />
+          <Lightformer
+            intensity={1.8}
+            color="#b9d6ff"
+            position={[4, 2, -3]}
+            scale={[5, 3, 1]}
+          />
+          <Lightformer
+            intensity={0.8}
+            color="#ffffff"
+            position={[0, -2, 4]}
+            scale={[8, 2, 1]}
+          />
+        </Environment> */}
+        <ambientLight intensity={0.35} color={"#bad8ff"} />
         <OrbitControls />
-        <ambientLight intensity={0.5} />
         <ThreeSceneDispatcher scene={scene} />
         <ThreeSceneCamera scene={scene} />
 
+        <ContactShadows
+          position={[0, -0.01, 0]}
+          opacity={0.42}
+          scale={8}
+          blur={2.4}
+          far={4}
+          resolution={1024}
+          color="#24170f"
+        />
         <Grid infiniteGrid />
         <ThreeFood />
       </Canvas>
