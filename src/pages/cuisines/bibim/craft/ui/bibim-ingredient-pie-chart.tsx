@@ -2,8 +2,16 @@ import { EditablePieChart } from "@/widgets/common/piecharts-draggable";
 import { useBibimIngredientPieChart } from "../model/use-bibim-ingredient-pie-chart";
 
 export function BibimIngredientPieChart() {
-  const { minIngredientValue, pieData, handlePieDataChange } =
+  const {
+    getMinIngredientValue,
+    minIngredientValue,
+    pieData,
+    handlePieDataChange,
+  } =
     useBibimIngredientPieChart();
+  const pieDataKey = pieData
+    .map((datum) => `${datum.id}:${datum.name}`)
+    .join("|");
 
   return (
     <div
@@ -13,6 +21,8 @@ export function BibimIngredientPieChart() {
       }}
     >
       <EditablePieChart
+        key={pieDataKey}
+        getMinValue={getMinIngredientValue}
         initialData={pieData}
         minValue={minIngredientValue}
         onChange={handlePieDataChange}

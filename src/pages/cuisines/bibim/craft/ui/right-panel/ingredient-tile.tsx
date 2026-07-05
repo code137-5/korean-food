@@ -13,8 +13,8 @@ export function IngredientTile({ ingredient }: IngredientTileProps) {
   const isSelected = useBibimCraftStore(
     (state) => state.ingredientFlags[ingredient.id] ?? false,
   );
-  const toggleIngredientFlag = useBibimCraftStore(
-    (state) => state.toggleIngredientFlag,
+  const toggleIngredientSelection = useBibimCraftStore(
+    (state) => state.toggleIngredientSelection,
   );
 
   return (
@@ -30,11 +30,11 @@ export function IngredientTile({ ingredient }: IngredientTileProps) {
       role="button"
       tabIndex={0}
       aria-pressed={isSelected}
-      onClick={() => toggleIngredientFlag(ingredient.id)}
+      onClick={() => toggleIngredientSelection(ingredient)}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          toggleIngredientFlag(ingredient.id);
+          toggleIngredientSelection(ingredient);
         }
       }}
     >

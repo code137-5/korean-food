@@ -12,6 +12,9 @@
     "loading": "Loading ingredients",
     "error": "Failed to load ingredients"
   },
+  "empty": {
+    "name": "Nothing selected"
+  },
   "items": {
     "pork": {
       "name": "Pork",

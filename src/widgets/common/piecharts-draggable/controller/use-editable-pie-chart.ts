@@ -23,6 +23,7 @@ import type {
 } from "../model/types";
 
 export function useEditablePieChart({
+  getMinValue,
   initialData,
   minValue = 1,
   onChange,
@@ -40,6 +41,10 @@ export function useEditablePieChart({
     () => getBoundaryAngles(data, total),
     [data, total],
   );
+  const getDatumMinValue = useCallback(
+    (datum: PieDatum) => getMinValue?.(datum) ?? minValue,
+    [getMinValue, minValue],
+  );
 
   const updateBoundary = useCallback(
     (boundaryIndex: number, pointerAngle: number) => {
@@ -48,7 +53,7 @@ export function useEditablePieChart({
           currentData,
           boundaryIndex,
           pointerAngle,
-          minValue,
+          getDatumMinValue,
         );
 
         if (nextData !== currentData) {
@@ -58,7 +63,7 @@ export function useEditablePieChart({
         return nextData;
       });
     },
-    [minValue, onChange],
+    [getDatumMinValue, onChange],
   );
 
   const handleBoundaryPointerMove = useCallback(

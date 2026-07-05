@@ -1,88 +1,62 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
+import type { IngredientId } from "@/entities/ingredient";
 import type { PieDatum } from "@/widgets/common/piecharts-draggable";
-import type { BibimIngredientChartItem } from "./bibim-ingredient-chart.types";
+import { useTranslation } from "react-i18next";
+import {
+  EMPTY_INGREDIENT_PIE_ITEM_ID,
+  useBibimCraftStore,
+} from "./bibim-craft-store";
 
-const MIN_INGREDIENT_VALUE = 3;
-
-const INITIAL_BIBIM_INGREDIENTS: BibimIngredientChartItem[] = [
-  {
-    code: "rice",
-    name: "Rice",
-    value: 35,
-    color: "#f3ead7",
-  },
-  {
-    code: "namul",
-    name: "Namul",
-    value: 30,
-    color: "#7fb069",
-  },
-  {
-    code: "protein",
-    name: "Protein",
-    value: 18,
-    color: "#c56a45",
-  },
-  {
-    code: "sauce",
-    name: "Gochujang",
-    value: 10,
-    color: "#9f1d20",
-  },
-  {
-    code: "egg",
-    name: "Egg",
-    value: 7,
-    color: "#f2c14e",
-  },
-];
-
-function toPieDatum(item: BibimIngredientChartItem): PieDatum {
-  return {
-    id: item.code,
-    name: item.name,
-    value: item.value,
-    fill: item.color,
-  };
-}
-
-function toIngredientChartItem(
-  datum: PieDatum,
-  currentItems: BibimIngredientChartItem[],
-): BibimIngredientChartItem {
-  const currentItem = currentItems.find((item) => item.code === datum.id);
-
-  if (currentItem) {
-    return {
-      ...currentItem,
-      value: datum.value,
-    };
-  }
-
-  return {
-    code: datum.id as BibimIngredientChartItem["code"],
-    name: datum.name,
-    value: datum.value,
-    color: datum.fill,
-  };
-}
+const MIN_INGREDIENT_VALUE = 10;
+const MIN_EMPTY_INGREDIENT_VALUE = 0;
 
 export function useBibimIngredientPieChart() {
-  const [items, setItems] = useState(INITIAL_BIBIM_INGREDIENTS);
-  const pieData = useMemo(() => items.map(toPieDatum), [items]);
+  const { t } = useTranslation("ingredient");
+  const ingredientPieItems = useBibimCraftStore(
+    (state) => state.ingredientPieItems,
+  );
+  const setIngredientPieItemsFromChartItems = useBibimCraftStore(
+    (state) => state.setIngredientPieItemsFromChartItems,
+  );
+  const pieData = useMemo<PieDatum[]>(
+    () =>
+      [...ingredientPieItems]
+        .sort((left, right) => left.order - right.order)
+        .filter((item) => item.value > 0)
+        .map((item) => ({
+          id: item.ingredientId,
+          name: t(item.nameKey),
+          value: item.value,
+          fill: item.color,
+        })),
+    [ingredientPieItems, t],
+  );
   const totalValue = useMemo(
-    () => items.reduce((total, item) => total + item.value, 0),
-    [items],
+    () => pieData.reduce((total, item) => total + item.value, 0),
+    [pieData],
   );
 
-  const handlePieDataChange = useCallback((nextData: PieDatum[]) => {
-    setItems((currentItems) =>
-      nextData.map((datum) => toIngredientChartItem(datum, currentItems)),
-    );
+  const handlePieDataChange = useCallback(
+    (nextData: PieDatum[]) => {
+      setIngredientPieItemsFromChartItems(
+        nextData.map((datum) => ({
+          id: datum.id as IngredientId,
+          value: datum.value,
+        })),
+      );
+    },
+    [setIngredientPieItemsFromChartItems],
+  );
+  const getMinIngredientValue = useCallback((datum: PieDatum) => {
+    if (datum.id === EMPTY_INGREDIENT_PIE_ITEM_ID) {
+      return MIN_EMPTY_INGREDIENT_VALUE;
+    }
+
+    return MIN_INGREDIENT_VALUE;
   }, []);
 
   return {
-    items,
+    getMinIngredientValue,
     minIngredientValue: MIN_INGREDIENT_VALUE,
     pieData,
     totalValue,

@@ -18,6 +18,7 @@ export type PieDragState = {
 
 export type EditablePieChartProps = {
   initialData: PieDatum[];
+  getMinValue?: (datum: PieDatum) => number;
   minValue?: number;
   onChange?: (data: PieDatum[]) => void;
 };

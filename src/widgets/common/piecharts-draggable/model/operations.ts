@@ -54,7 +54,7 @@ export function resizeBoundary(
   data: PieDatum[],
   boundaryIndex: number,
   pointerAngle: number,
-  minValue: number,
+  getMinValue: (datum: PieDatum) => number,
 ) {
   if (data.length < 2) {
     return data;
@@ -70,9 +70,11 @@ export function resizeBoundary(
   const rightIndex = (boundaryIndex + 1) % data.length;
   const leftValue = data[leftIndex].value;
   const rightValue = data[rightIndex].value;
+  const leftMinValue = getMinValue(data[leftIndex]);
+  const rightMinValue = getMinValue(data[rightIndex]);
   const pairTotal = leftValue + rightValue;
 
-  if (pairTotal < minValue * 2) {
+  if (pairTotal < leftMinValue + rightMinValue) {
     return data;
   }
 
@@ -87,15 +89,16 @@ export function resizeBoundary(
     normalizeAngle(leftStartAngle),
     pointerAngle,
   );
-  const minAngle = valueToAngle(minValue, currentTotal);
+  const leftMinAngle = valueToAngle(leftMinValue, currentTotal);
+  const rightMinAngle = valueToAngle(rightMinValue, currentTotal);
 
-  if (pointerDistance > pairAngle + Math.max(20, minAngle)) {
+  if (pointerDistance > pairAngle + Math.max(20, leftMinAngle, rightMinAngle)) {
     return data;
   }
 
   const clampedLeftAngle = Math.min(
-    Math.max(pointerDistance, minAngle),
-    pairAngle - minAngle,
+    Math.max(pointerDistance, leftMinAngle),
+    pairAngle - rightMinAngle,
   );
   const nextLeftValue = angleToValue(clampedLeftAngle, currentTotal);
   const nextRightValue = pairTotal - nextLeftValue;
