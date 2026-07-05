@@ -8,6 +8,7 @@ import {
 } from "recharts";
 import { useEditablePieChart } from "../controller/use-editable-pie-chart";
 import {
+  CHART_CENTER,
   FULL_ANGLE,
   INNER_RADIUS,
   OUTER_RADIUS,
@@ -16,6 +17,10 @@ import {
 import type { EditablePieChartProps } from "../model/types";
 import { BoundaryHandles } from "./boundary-handles";
 import { PieSliceShape } from "./pie-slice-shape";
+
+function getResponsiveRadius(radius: number): string {
+  return `${(radius / CHART_CENTER) * 100}%`;
+}
 
 export function EditablePieChart(props: EditablePieChartProps) {
   const chart = useEditablePieChart(props);
@@ -33,14 +38,10 @@ export function EditablePieChart(props: EditablePieChartProps) {
 
   return (
     <div
+      className="relative h-full w-full select-none"
       onPointerMove={chart.handlePiePointerMove}
       onPointerUp={chart.stopPieDragging}
       onPointerCancel={chart.stopPieDragging}
-      style={{
-        width: "100%",
-        height: 480,
-        userSelect: "none",
-      }}
     >
       <ResponsiveContainer>
         <PieChart>
@@ -50,8 +51,8 @@ export function EditablePieChart(props: EditablePieChartProps) {
             nameKey="name"
             cx="50%"
             cy="50%"
-            innerRadius={INNER_RADIUS}
-            outerRadius={OUTER_RADIUS}
+            innerRadius={getResponsiveRadius(INNER_RADIUS)}
+            outerRadius={getResponsiveRadius(OUTER_RADIUS)}
             startAngle={START_ANGLE}
             endAngle={START_ANGLE + FULL_ANGLE}
             isAnimationActive={false}

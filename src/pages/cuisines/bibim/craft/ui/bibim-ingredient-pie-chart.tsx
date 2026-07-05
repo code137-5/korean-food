@@ -7,19 +7,13 @@ export function BibimIngredientPieChart() {
     minIngredientValue,
     pieData,
     handlePieDataChange,
-  } =
-    useBibimIngredientPieChart();
+  } = useBibimIngredientPieChart();
   const pieDataKey = pieData
     .map((datum) => `${datum.id}:${datum.name}`)
     .join("|");
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: 480,
-      }}
-    >
+    <div className="relative h-full aspect-square max-h-full max-w-full">
       <EditablePieChart
         key={pieDataKey}
         getMinValue={getMinIngredientValue}

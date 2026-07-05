@@ -40,7 +40,7 @@ export function BoundaryHandles({
         position: "absolute",
         inset: 0,
         width: "100%",
-        height: 480,
+        height: "100%",
         touchAction: "none",
         overflow: "visible",
         pointerEvents: "none",
