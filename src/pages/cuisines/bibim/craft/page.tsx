@@ -4,9 +4,7 @@ import {
   TexturedButton,
   TexturedPanel,
 } from "@/shared/ui/textured-ui";
-import { PieCharts } from "@/widgets/common/piecharts";
 import DraggablePiecharts from "@/widgets/common/piecharts-draggable";
-import { PieChartsTest } from "@/widgets/common/piecharts-test";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
