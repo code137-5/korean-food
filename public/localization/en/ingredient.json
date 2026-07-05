@@ -1,0 +1,96 @@
+{
+  "items": {
+    "pork": {
+      "name": "Pork",
+      "description": "A savory meat ingredient often used in stews, rice bowls, and grilled dishes."
+    },
+    "beef": {
+      "name": "Beef",
+      "description": "A rich protein used for bulgogi, soups, rice bowls, and festive dishes."
+    },
+    "chicken": {
+      "name": "Chicken",
+      "description": "A mild protein that works well in soups, braises, and everyday meals."
+    },
+    "mackerel": {
+      "name": "Mackerel",
+      "description": "An oily fish with a deep flavor, commonly grilled or braised."
+    },
+    "salmon": {
+      "name": "Salmon",
+      "description": "A tender fish with a rich texture and bright color."
+    },
+    "tuna": {
+      "name": "Tuna",
+      "description": "A firm seafood ingredient used in rice dishes, salads, and quick meals."
+    },
+    "gosari": {
+      "name": "Gosari",
+      "description": "Bracken fern shoots with an earthy flavor, often seasoned as namul."
+    },
+    "spinach": {
+      "name": "Spinach",
+      "description": "A green vegetable often blanched and seasoned with sesame oil."
+    },
+    "bean_sprout": {
+      "name": "Bean Sprout",
+      "description": "Soybean sprouts with a crisp texture and clean flavor."
+    },
+    "mung_bean_sprout": {
+      "name": "Mung Bean Sprout",
+      "description": "Tender sprouts used in light namul, soups, and stir-fries."
+    },
+    "shiitake": {
+      "name": "Shiitake",
+      "description": "A mushroom with deep umami and a firm bite."
+    },
+    "oyster_mushroom": {
+      "name": "Oyster Mushroom",
+      "description": "A soft mushroom that absorbs seasoning and broth well."
+    },
+    "enoki": {
+      "name": "Enoki",
+      "description": "Thin, crisp mushrooms often used in soups and hot pots."
+    },
+    "carrot": {
+      "name": "Carrot",
+      "description": "A sweet vegetable that adds color and texture."
+    },
+    "zucchini": {
+      "name": "Zucchini",
+      "description": "A mild squash commonly sauteed or added to stews."
+    },
+    "cucumber": {
+      "name": "Cucumber",
+      "description": "A refreshing vegetable used raw, seasoned, or pickled."
+    },
+    "gochujang": {
+      "name": "Gochujang",
+      "description": "A fermented red pepper paste with spicy, sweet, and savory depth."
+    },
+    "soysauce": {
+      "name": "Soy Sauce",
+      "description": "A salty fermented sauce used as a base seasoning."
+    },
+    "soybean": {
+      "name": "Soybean Paste",
+      "description": "A fermented soybean paste that gives soups and sauces deep savoriness."
+    },
+    "ssamjang": {
+      "name": "Ssamjang",
+      "description": "A thick savory sauce used for wraps and grilled foods."
+    },
+    "sesame_oil": {
+      "name": "Sesame Oil",
+      "description": "A fragrant oil that adds nutty aroma to finished dishes."
+    },
+    "egg": {
+      "name": "Egg",
+      "description": "A versatile ingredient used as protein, garnish, or binder."
+    },
+    "avocado": {
+      "name": "Avocado",
+      "description": "A creamy ingredient that can add richness to modern rice bowls."
+    }
+  }
+}
