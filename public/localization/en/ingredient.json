@@ -1,4 +1,17 @@
 {
+  "categories": {
+    "meat": "Meat",
+    "fish": "Fish",
+    "namul": "Namul",
+    "mushroom": "Mushroom",
+    "vegetable": "Vegetable",
+    "sauce": "Sauce",
+    "etc": "Other"
+  },
+  "status": {
+    "loading": "Loading ingredients",
+    "error": "Failed to load ingredients"
+  },
   "items": {
     "pork": {
       "name": "Pork",

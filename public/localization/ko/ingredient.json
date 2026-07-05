@@ -1,16 +1,29 @@
 {
+  "categories": {
+    "meat": "고기",
+    "fish": "생선",
+    "namul": "나물",
+    "mushroom": "버섯",
+    "vegetable": "채소",
+    "sauce": "양념",
+    "etc": "기타"
+  },
+  "status": {
+    "loading": "재료를 불러오는 중입니다",
+    "error": "재료를 불러오지 못했습니다"
+  },
   "items": {
     "pork": {
       "name": "돼지고기",
-      "description": "찌개, 덮밥, 구이 등에 두루 쓰이는 감칠맛 있는 육류 재료입니다."
+      "description": "찌개, 덮밥, 구이 등에 자주 쓰이는 고소한 고기 재료입니다."
     },
     "beef": {
       "name": "소고기",
-      "description": "불고기, 국물 요리, 비빔밥, 명절 음식에 잘 어울리는 진한 단백질 재료입니다."
+      "description": "불고기, 국, 밥 요리와 명절 음식에 잘 어울리는 깊은 맛의 단백질 재료입니다."
     },
     "chicken": {
       "name": "닭고기",
-      "description": "국물, 조림, 일상식에 쓰기 좋은 담백한 단백질 재료입니다."
+      "description": "국물, 조림, 일상식에 두루 쓰기 좋은 담백한 단백질 재료입니다."
     },
     "mackerel": {
       "name": "고등어",
@@ -22,11 +35,11 @@
     },
     "tuna": {
       "name": "참치",
-      "description": "밥 요리, 샐러드, 간편식에 활용하기 좋은 단단한 해산물 재료입니다."
+      "description": "밥 요리, 샐러드, 간편식에 쓰기 좋은 단단한 해산물 재료입니다."
     },
     "gosari": {
       "name": "고사리",
-      "description": "흙내음과 씹는 맛이 있어 나물로 자주 무치는 재료입니다."
+      "description": "흙내음과 깊은 맛이 있어 나물로 자주 무치는 재료입니다."
     },
     "spinach": {
       "name": "시금치",
@@ -38,11 +51,11 @@
     },
     "mung_bean_sprout": {
       "name": "숙주나물",
-      "description": "가벼운 나물, 국물, 볶음 요리에 잘 어울리는 부드러운 새싹 재료입니다."
+      "description": "가벼운 나물, 국물, 볶음 요리에 어울리는 부드러운 새싹 재료입니다."
     },
     "shiitake": {
       "name": "표고버섯",
-      "description": "깊은 감칠맛과 탄탄한 식감을 가진 버섯입니다."
+      "description": "깊은 감칠맛과 향긋한 식감을 가진 버섯입니다."
     },
     "oyster_mushroom": {
       "name": "느타리버섯",
@@ -54,11 +67,11 @@
     },
     "carrot": {
       "name": "당근",
-      "description": "단맛과 선명한 색감을 더해주는 채소입니다."
+      "description": "단맛과 선명한 색감을 더해 주는 채소입니다."
     },
     "zucchini": {
       "name": "애호박",
-      "description": "볶음이나 찌개에 자주 들어가는 담백한 호박 재료입니다."
+      "description": "볶음이나 찌개에 자주 들어가는 담백한 재료입니다."
     },
     "cucumber": {
       "name": "오이",
@@ -70,7 +83,7 @@
     },
     "soysauce": {
       "name": "간장",
-      "description": "짠맛과 감칠맛을 내는 기본 발효 양념입니다."
+      "description": "짭짤하고 감칠맛을 내는 기본 발효 양념입니다."
     },
     "soybean": {
       "name": "된장",
@@ -78,7 +91,7 @@
     },
     "ssamjang": {
       "name": "쌈장",
-      "description": "쌈이나 구이와 함께 먹는 되직하고 감칠맛 있는 양념장입니다."
+      "description": "쌈이나 구이와 함께 먹는 진하고 감칠맛 있는 양념장입니다."
     },
     "sesame_oil": {
       "name": "참기름",
