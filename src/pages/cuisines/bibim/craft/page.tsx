@@ -4,7 +4,7 @@ import {
   TexturedButton,
   TexturedPanel,
 } from "@/shared/ui/textured-ui";
-import DraggablePiecharts from "@/widgets/common/piecharts-draggable";
+import { BibimIngredientPieChart } from "./ui/bibim-ingredient-pie-chart";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -50,9 +50,7 @@ function IngredientDiagram() {
   return (
     <div className="h-full w-full pointer-events-auto flex flex-col py-4">
       <DetailPanelHeader title="비빔밥 재료 선택" text="dark" />
-      {/* <PieCharts /> */}
-      {/* <PieChartsTest /> */}
-      <DraggablePiecharts />
+      <BibimIngredientPieChart />
     </div>
   );
 }
