@@ -1,15 +1,15 @@
 ﻿import { Canvas } from "@react-three/fiber";
+import { useMemo } from "react";
 import {
   ContactShadows,
-  Environment,
   Grid,
-  Lightformer,
   OrbitControls,
   useGLTF,
 } from "@react-three/drei";
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
 import { ACESFilmicToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
 import { TexturedScreen } from "@/shared/ui/textured-ui";
+import { useBibimCraftResultIngredientsQuery } from "@/pages/cuisines/bibim/craft/result/model/use-bibim-craft-result-ingredients-query";
 import { ThreeSceneCamera } from "./scene/scene-camera";
 import { useCurrentThreeScene } from "./scene/model";
 
@@ -21,6 +21,18 @@ function ThreeFood() {
 
 export function ThreeCanvas() {
   const scene = useCurrentThreeScene();
+  const bibimCraftResultIngredientsQuery = useBibimCraftResultIngredientsQuery();
+  const bibimResultSlices = useMemo(
+    () =>
+      bibimCraftResultIngredientsQuery.data.map(
+        ({ ingredient, ingredientId, value }) => ({
+          color: ingredient.color ?? "#7fb069",
+          id: ingredientId,
+          value,
+        }),
+      ),
+    [bibimCraftResultIngredientsQuery.data],
+  );
 
   return (
     <div className="relative block w-full h-full">
@@ -87,7 +99,10 @@ export function ThreeCanvas() {
         </Environment> */}
         <ambientLight intensity={0.35} color={"#bad8ff"} />
         <OrbitControls />
-        <ThreeSceneDispatcher scene={scene} />
+        <ThreeSceneDispatcher
+          bibimResultSlices={bibimResultSlices}
+          scene={scene}
+        />
         <ThreeSceneCamera scene={scene} />
 
         <ContactShadows

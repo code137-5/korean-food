@@ -10,6 +10,7 @@ import { WinterPage } from "@/pages/seasons/winter/page";
 import { SeasonCuisinePage } from "@/pages/cuisines/seasons/page";
 import type { ThreeSceneType } from "@/3d/scene/model";
 import { BibimCraftPage } from "@/pages/cuisines/bibim/craft/page";
+import { BibimCraftResultPage } from "@/pages/cuisines/bibim/craft/result/page";
 import { BibimCuisinePage } from "@/pages/cuisines/bibim/page";
 import { UITestBedPage } from "@/pages/ui-test-bed/page";
 
@@ -47,6 +48,12 @@ export const router = createBrowserRouter(
           element: <BibimCraftPage />,
           errorElement: <NotFoundPage />,
           handle: { scene: "bibim.craft" satisfies ThreeSceneType },
+        },
+        {
+          path: "cuisines/bibim/craft/result",
+          element: <BibimCraftResultPage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "bibim.result" satisfies ThreeSceneType },
         },
         {
           path: "seasons",
