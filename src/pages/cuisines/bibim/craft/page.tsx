@@ -1,42 +1,55 @@
 import { DetailPanelHeader } from "@/shared/ui/detail-panel";
+import {
+  PaperTile,
+  TexturedButton,
+  TexturedPanel,
+} from "@/shared/ui/textured-ui";
 import { PieCharts } from "@/widgets/common/piecharts";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function ButtonBackward() {
-  return <div className="w-full h-16 bg-amber-600"></div>;
+  const navigate = useNavigate();
+  return (
+    <TexturedButton
+      size="md"
+      variant="dark"
+      onClick={() => navigate("/")}
+      className="w-full h-16"
+    >
+      <ArrowLeft className="size-8 text-[#F1E1C3]" aria-hidden="true" />
+      <div className="px-4">뒤로가기</div>
+    </TexturedButton>
+  );
 }
 
 function IngredientCategories() {
   return (
-    <div
-      className="w-full min-h-0 grow bg-blue-600 flex flex-col gap-1 p-4 overflow-y-scroll       [&::-webkit-scrollbar]:w-3
+    <TexturedPanel
+      className="w-full min-h-0 grow flex flex-col gap-1 p-4 overflow-y-scroll       [&::-webkit-scrollbar]:w-3
       [&::-webkit-scrollbar-track]:bg-transparent
       [&::-webkit-scrollbar-thumb]:bg-zinc-500
       [&::-webkit-scrollbar-thumb]:rounded-full"
+      variant="golden"
     >
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-      <div className="bg-sky-400 h-8 shrink-0" />
-    </div>
+      <TexturedButton size="sm">{"나물"}</TexturedButton>
+      <TexturedButton size="sm">{"나물"}</TexturedButton>
+      <TexturedButton size="sm">{"나물"}</TexturedButton>
+      <TexturedButton size="sm">{"나물"}</TexturedButton>
+    </TexturedPanel>
   );
 }
 
 function IngredientBag() {
-  return <div className="w-full h-80 bg-green-600"></div>;
+  return (
+    <TexturedPanel variant="golden" className="w-full h-80"></TexturedPanel>
+  );
 }
 
 function IngredientDiagram() {
   return (
     <div className="h-full w-full pointer-events-auto flex flex-col py-4">
-      <DetailPanelHeader title="비빔밥 재료 선택" />
+      <DetailPanelHeader title="비빔밥 재료 선택" text="dark" />
       <PieCharts />
     </div>
   );
@@ -44,20 +57,31 @@ function IngredientDiagram() {
 
 export function BibimCraftPage() {
   return (
-    <>
-      <div className="absolute left-0 h-full pointer-events-auto">
-        <div className="relative w-60 h-full bg-amber-300 flex flex-col">
+    <div className="absolute inset-0 flex flex-row items-center gap-6 p-4 pointer-events-none">
+      <div className="relative z-20 h-full w-64 pointer-events-auto">
+        <div className="relative flex h-full flex-col gap-4">
           <ButtonBackward />
           <IngredientCategories />
           <IngredientBag />
         </div>
       </div>
 
-      <div className="absolute w-[45%] h-[95%] bg-amber-800 left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">
+      <TexturedPanel
+        variant="felt"
+        className="relative z-10 h-[95%] grow p-8 pointer-events-auto"
+      >
         <IngredientDiagram />
-      </div>
+      </TexturedPanel>
 
-      <div className="absolute right-2 top-1/2 translate-y-[-50%] h-[90%] w-[25%] bg-amber-500"></div>
-    </>
+      <TexturedPanel className="relative z-20 h-[90%] p-4 grid grid-cols-4 content-start gap-1 pointer-events-auto">
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+        <PaperTile className="block w-28 aspect-2/3" />
+      </TexturedPanel>
+    </div>
   );
 }

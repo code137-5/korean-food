@@ -18,9 +18,9 @@ const variantClassName: Record<TexturedButtonVariant, string> = {
 };
 
 const sizeClassName: Record<TexturedButtonSize, string> = {
-  sm: "ui-textured-button-sm p-3 text-xl",
+  sm: "ui-textured-button-sm py-6 px-3 text-xl",
   md: "ui-textured-button-md py-8 px-6 text-xl",
-  lg: "ui-textured-button-lg py-5 px-28 text-4xl",
+  lg: "ui-textured-button-lg py-10 px-28 text-4xl",
 };
 
 const fontColor: Record<TexturedButtonVariant, string> = {

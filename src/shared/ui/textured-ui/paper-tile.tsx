@@ -12,7 +12,7 @@ export function PaperTile({
   ...props
 }: PaperTileProps) {
   return (
-    <div className={cn("ui-paper-tile-frame h-30 p-1", className)} {...props}>
+    <div className={cn("ui-paper-tile-frame p-1", className)} {...props}>
       <div className={cn("ui-paper-tile h-full w-full", contentClassName)} />
     </div>
   );

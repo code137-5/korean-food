@@ -1,18 +1,28 @@
 import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
 import { DetailPanelDivider } from "./detail-panel-divider";
+import { cn } from "@/lib/utils";
 
 type DetailPanelHeaderProps = {
   title: string;
+  text?: TextColorVariant;
   subtitle?: string;
   eyebrow?: ReactNode;
   marker?: ReactNode;
+};
+
+type TextColorVariant = "bright" | "dark";
+
+const TextColor = {
+  bright: "text-[#f3ead7]",
+  dark: "textd-[#000000]",
 };
 
 export function DetailPanelHeader({
   title,
   subtitle,
   eyebrow,
+  text = "bright",
   marker,
 }: DetailPanelHeaderProps) {
   return (
@@ -26,7 +36,12 @@ export function DetailPanelHeader({
         </Badge>
       ) : null} */}
 
-      <h1 className="text-7xl font-semibold tracking-[0.08em] text-[#f3ead7]">
+      <h1
+        className={cn(
+          TextColor[text],
+          "text-7xl font-semibold tracking-[0.08em]",
+        )}
+      >
         {title}
       </h1>
 
