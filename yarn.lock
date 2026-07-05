@@ -1250,6 +1250,11 @@
     use-sync-external-store "^1.4.0"
     zustand "^5.0.3"
 
+"@recharts/devtools@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@recharts/devtools/-/devtools-0.0.14.tgz#bb501005e430b6da6bd22f5e11df4bf64e211c4b"
+  integrity sha512-FPTpay/nGiULGkGcXSltG6RN0LiQ9wHveLFg/kbD2wWnbZOoKdq/67Xhs4aI9V1D2PPs1VNW+djZ8cw7pNtxiQ==
+
 "@reduxjs/toolkit@^1.9.0 || 2.x.x":
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-2.12.0.tgz#e62787503a38561e04bb8f39e29ca8db689590f9"
