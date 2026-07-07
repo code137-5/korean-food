@@ -1,5 +1,5 @@
-﻿import { Canvas } from "@react-three/fiber";
-import { useMemo } from "react";
+﻿import { Canvas, useThree } from "@react-three/fiber";
+import { useEffect, useMemo } from "react";
 import {
   ContactShadows,
   Grid,
@@ -7,11 +7,19 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
-import { ACESFilmicToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
+import {
+  ACESFilmicToneMapping,
+  NeutralToneMapping,
+  PCFSoftShadowMap,
+  SRGBColorSpace,
+} from "three";
 import { TexturedScreen } from "@/shared/ui/textured-ui";
 import { useBibimCraftResultIngredientsQuery } from "@/pages/cuisines/bibim/craft/result/model/use-bibim-craft-result-ingredients-query";
 import { ThreeSceneCamera } from "./scene/scene-camera";
 import { useCurrentThreeScene } from "./scene/model";
+import { createDisplaceableCylinderTopGeometry } from "@/shared/3d/geometry";
+import * as THREE from "three";
+import { textureLoader } from "@/shared/3d/loader/texture-loader";
 
 function ThreeFood() {
   const model = useGLTF("/3d/foods/Pressed Flower Coasters.glb");
@@ -19,9 +27,65 @@ function ThreeFood() {
   return <primitive object={model.scene.clone()} />;
 }
 
+function ThreePie() {
+  const { scene } = useThree();
+
+  useEffect(() => {
+    const geometry = createDisplaceableCylinderTopGeometry({
+      thetaLength: Math.PI * 2,
+      radialSegments: 64,
+      thetaSegments: 128,
+    });
+    const material = new THREE.MeshStandardMaterial();
+    const mesh = new THREE.Mesh(geometry, material);
+
+    Promise.all([
+      textureLoader.loadAsync(
+        "3d/maps/cuisines/ingredients/gosari-diffuse.png",
+      ),
+      textureLoader.loadAsync(
+        "3d/maps/cuisines/ingredients/gosari2-displacement.png",
+      ),
+      textureLoader.loadAsync(
+        "3d/maps/cuisines/ingredients/gosari2-normal.png",
+      ),
+    ]).then((res) => {
+      res[0].colorSpace = THREE.SRGBColorSpace;
+      const mat = new THREE.MeshStandardMaterial({
+        map: res[0],
+        displacementMap: res[1],
+        displacementScale: 0.2,
+        normalMap: res[2],
+        normalScale: new THREE.Vector2(0.3, 0.3),
+        // roughness: 0.2,
+      });
+
+      mesh.material = mat;
+
+      // const geo = new THREE.BoxGeometry();
+      // const box = new THREE.Mesh(geo, mat);
+      // scene.add(box);
+
+      // material.map = res[0];
+      // material.displacementMap = res[1];
+    });
+
+    scene.add(mesh);
+
+    return () => {
+      scene.remove(mesh);
+      geometry.dispose();
+      material.dispose();
+    };
+  }, [scene]);
+
+  return null;
+}
+
 export function ThreeCanvas() {
   const scene = useCurrentThreeScene();
-  const bibimCraftResultIngredientsQuery = useBibimCraftResultIngredientsQuery();
+  const bibimCraftResultIngredientsQuery =
+    useBibimCraftResultIngredientsQuery();
   const bibimResultSlices = useMemo(
     () =>
       bibimCraftResultIngredientsQuery.data.map(
@@ -48,7 +112,7 @@ export function ThreeCanvas() {
         gl={{
           antialias: true,
           powerPreference: "high-performance",
-          toneMapping: ACESFilmicToneMapping,
+          toneMapping: NeutralToneMapping,
           toneMappingExposure: 1.05,
           outputColorSpace: SRGBColorSpace,
         }}
@@ -97,7 +161,7 @@ export function ThreeCanvas() {
             scale={[8, 2, 1]}
           />
         </Environment> */}
-        <ambientLight intensity={0.35} color={"#bad8ff"} />
+        <ambientLight intensity={2} color={"#bad8ff"} />
         <OrbitControls />
         <ThreeSceneDispatcher
           bibimResultSlices={bibimResultSlices}
@@ -115,7 +179,8 @@ export function ThreeCanvas() {
           color="#24170f"
         />
         <Grid infiniteGrid />
-        <ThreeFood />
+        {/* <ThreeFood /> */}
+        <ThreePie />
       </Canvas>
     </div>
   );
