@@ -20,6 +20,7 @@ import { useCurrentThreeScene } from "./scene/model";
 import { createDisplaceableCylinderTopGeometry } from "@/shared/3d/geometry";
 import * as THREE from "three";
 import { textureLoader } from "@/shared/3d/loader/texture-loader";
+import { replaceDisplacementMapWithWeightedChunk } from "@/shared/3d/material";
 
 function ThreeFood() {
   const model = useGLTF("/3d/foods/Pressed Flower Coasters.glb");
@@ -27,31 +28,41 @@ function ThreeFood() {
   return <primitive object={model.scene.clone()} />;
 }
 
-function ThreePie() {
+interface ThreePieProp {
+  startAngle: number;
+  diffAngle: number;
+  order: number;
+}
+
+function ThreePie({ startAngle, diffAngle, order }: ThreePieProp) {
   const { scene } = useThree();
 
   useEffect(() => {
     const geometry = createDisplaceableCylinderTopGeometry({
-      thetaLength: Math.PI * 2,
+      thetaStart: startAngle,
+      thetaLength: diffAngle,
       radialSegments: 64,
       thetaSegments: 128,
+      height: 0.3,
     });
     const material = new THREE.MeshStandardMaterial();
     const mesh = new THREE.Mesh(geometry, material);
 
+    const ingredient = order % 2 === 0 ? "gosari" : "tofu";
     Promise.all([
       textureLoader.loadAsync(
-        "3d/maps/cuisines/ingredients/gosari-diffuse.png",
+        `3d/maps/cuisines/ingredients/${ingredient}-diffuse.png`,
       ),
       textureLoader.loadAsync(
-        "3d/maps/cuisines/ingredients/gosari2-displacement.png",
+        `3d/maps/cuisines/ingredients/${ingredient}2-displacement.png`,
       ),
       textureLoader.loadAsync(
-        "3d/maps/cuisines/ingredients/gosari2-normal.png",
+        `3d/maps/cuisines/ingredients/${ingredient}2-normal.png`,
       ),
     ]).then((res) => {
       res[0].colorSpace = THREE.SRGBColorSpace;
       const mat = new THREE.MeshStandardMaterial({
+        // wireframe: true,
         map: res[0],
         displacementMap: res[1],
         displacementScale: 0.2,
@@ -60,24 +71,22 @@ function ThreePie() {
         // roughness: 0.2,
       });
 
+      mat.onBeforeCompile = replaceDisplacementMapWithWeightedChunk;
+      mat.customProgramCacheKey = () =>
+        "displacement-weighted-displacement-map";
+
       mesh.material = mat;
-
-      // const geo = new THREE.BoxGeometry();
-      // const box = new THREE.Mesh(geo, mat);
-      // scene.add(box);
-
-      // material.map = res[0];
-      // material.displacementMap = res[1];
     });
 
     scene.add(mesh);
+    mesh.position.set(0, 0.5, 0);
 
     return () => {
       scene.remove(mesh);
       geometry.dispose();
       material.dispose();
     };
-  }, [scene]);
+  }, [scene, startAngle, diffAngle, order]);
 
   return null;
 }
@@ -97,6 +106,8 @@ export function ThreeCanvas() {
       ),
     [bibimCraftResultIngredientsQuery.data],
   );
+
+  const arr = useMemo(() => Array.from({ length: 6 }, (_, i) => i), []);
 
   return (
     <div className="relative block w-full h-full">
@@ -180,7 +191,16 @@ export function ThreeCanvas() {
         />
         <Grid infiniteGrid />
         {/* <ThreeFood /> */}
-        <ThreePie />
+        {arr.map((i) => (
+          <ThreePie
+            key={`ThreePie-${i}`}
+            order={i}
+            startAngle={i * (Math.PI / 3)}
+            diffAngle={Math.PI / 3}
+          />
+        ))}
+        {Array([])}
+        {/* <ThreePie order={0} startAngle={0} diffAngle={Math.PI / 12} /> */}
       </Canvas>
     </div>
   );
