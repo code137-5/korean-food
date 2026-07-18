@@ -1,10 +1,15 @@
 import {
   type ReactNode,
   useCallback,
+  useEffect,
   useRef,
   useState,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  useBlocker,
+  useNavigate,
+  type BlockerFunction,
+} from "react-router-dom";
 import {
   RouteTransitionContext,
   type TransitionNavigate,
@@ -24,36 +29,66 @@ export function RouteTransitionProvider({ children }: { children: ReactNode }) {
   const [phase, setPhase] = useState<TransitionPhase>("idle");
   const isTransitioning = useRef(false);
 
+  const runTransition = useCallback((action: () => void) => {
+    if (isTransitioning.current) {
+      return;
+    }
+
+    isTransitioning.current = true;
+
+    void (async () => {
+      setPhase("covering");
+      await wait(FADE_DURATION_MS);
+
+      setPhase("covered");
+      action();
+
+      await wait(COVERED_DURATION_MS);
+
+      setPhase("revealing");
+      await wait(FADE_DURATION_MS);
+
+      setPhase("idle");
+      isTransitioning.current = false;
+    })();
+  }, []);
+
+  const shouldBlockNavigation = useCallback<BlockerFunction>(
+    ({ currentLocation, nextLocation }) =>
+      !isTransitioning.current &&
+      (currentLocation.pathname !== nextLocation.pathname ||
+        currentLocation.search !== nextLocation.search ||
+        currentLocation.hash !== nextLocation.hash),
+    [],
+  );
+  const blocker = useBlocker(shouldBlockNavigation);
+
+  useEffect(() => {
+    if (blocker.state !== "blocked") {
+      return;
+    }
+
+    const proceed = blocker.proceed;
+    const timeoutId = window.setTimeout(() => {
+      runTransition(proceed);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [blocker, runTransition]);
+
   const transitionNavigate = useCallback<TransitionNavigate>(
     (to, options) => {
-      if (isTransitioning.current) {
-        return;
-      }
-
-      isTransitioning.current = true;
-
-      void (async () => {
-        setPhase("covering");
-        await wait(FADE_DURATION_MS);
-
-        setPhase("covered");
-
+      runTransition(() => {
         if (typeof to === "number") {
           navigate(to);
         } else {
           navigate(to, options);
         }
-
-        await wait(COVERED_DURATION_MS);
-
-        setPhase("revealing");
-        await wait(FADE_DURATION_MS);
-
-        setPhase("idle");
-        isTransitioning.current = false;
-      })();
+      });
     },
-    [navigate],
+    [navigate, runTransition],
   );
 
   return (
