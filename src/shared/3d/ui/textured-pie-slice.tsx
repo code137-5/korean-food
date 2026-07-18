@@ -1,9 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { SRGBColorSpace, Vector2, type Texture } from "three";
 
-import { createDisplaceableCylinderTopGeometry } from "@/shared/3d/geometry";
+import {
+  createDisplaceableCylinderTopGeometry,
+  getAverageDisplacedY,
+} from "@/shared/3d/geometry";
 import { textureLoader } from "@/shared/3d/loader/texture-loader";
-import { replaceDisplacementMapWithWeightedChunk } from "@/shared/3d/material";
+import {
+  DISPLACEMENT_WEIGHT_ATTRIBUTE,
+  replaceDisplacementMapWithWeightedChunk,
+} from "@/shared/3d/material";
 import { resolvePublicAssetUrl } from "@/shared/lib/url";
 
 type TextureMaps = {
@@ -26,6 +32,7 @@ type TexturedPieSliceProps = {
 
 const FULL_CIRCLE = Math.PI * 2;
 const DEFAULT_COLOR = "#d8c8a8";
+const DISPLACEMENT_SCALE = 0.2;
 const DISPLACEMENT_WEIGHTED_PROGRAM_KEY =
   "displacement-weighted-displacement-map";
 
@@ -53,6 +60,27 @@ export function TexturedPieSlice({
         thetaStart,
       }),
     [height, radius, thetaLength, thetaStart],
+  );
+  const yBias = useMemo(() => {
+    if (!textureMaps) {
+      return 0;
+    }
+
+    return (
+      height / 2 -
+      getAverageDisplacedY(
+        geometry,
+        textureMaps.displacement,
+        DISPLACEMENT_SCALE,
+        {
+          displacementWeightAttribute: DISPLACEMENT_WEIGHT_ATTRIBUTE,
+        },
+      )
+    );
+  }, [geometry, height, textureMaps]);
+  const biasedPosition = useMemo<[number, number, number]>(
+    () => [position?.[0] ?? 0, (position?.[1] ?? 0) + yBias, position?.[2] ?? 0],
+    [position, yBias],
   );
 
   useEffect(() => {
@@ -115,7 +143,7 @@ export function TexturedPieSlice({
   }, [diffuseMapUrl, displacementMapUrl, normalMapUrl]);
 
   return (
-    <mesh castShadow geometry={geometry} position={position} receiveShadow>
+    <mesh castShadow geometry={geometry} position={biasedPosition} receiveShadow>
       <meshStandardMaterial
         key={textureMaps ? "textured" : "fallback"}
         color={textureMaps ? "white" : fallbackColor}
@@ -123,7 +151,7 @@ export function TexturedPieSlice({
           textureMaps ? DISPLACEMENT_WEIGHTED_PROGRAM_KEY : "default"
         }
         displacementMap={textureMaps?.displacement ?? null}
-        displacementScale={textureMaps ? 0.2 : 0}
+        displacementScale={textureMaps ? DISPLACEMENT_SCALE : 0}
         map={textureMaps?.diffuse ?? null}
         normalMap={textureMaps?.normal ?? null}
         normalScale={normalScale}
