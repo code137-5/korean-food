@@ -5,8 +5,8 @@ import type {
 } from "@/entities/ingredient";
 import { create } from "zustand";
 
-const DEFAULT_INGREDIENT_PIE_ITEM_VALUE = 10;
-const MIN_INGREDIENT_PIE_ITEM_VALUE = 10;
+const DEFAULT_INGREDIENT_PIE_ITEM_VALUE = 15;
+const MIN_INGREDIENT_PIE_ITEM_VALUE = 15;
 const MAX_INGREDIENT_PIE_ITEMS_VALUE = 100;
 const DEFAULT_INGREDIENT_PIE_ITEM_COLOR = "#7fb069";
 export const EMPTY_INGREDIENT_PIE_ITEM_ID = "__empty__" as IngredientId;

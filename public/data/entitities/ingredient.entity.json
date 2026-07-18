@@ -5,11 +5,21 @@
     "nameKey": "items.beef.name",
     "descriptionKey": "items.beef.description",
     "color": "#9d4a35",
-    "tags": ["protein", "savory", "bibimbap"],
+    "tags": [
+      "protein",
+      "savory",
+      "bibimbap"
+    ],
     "allergenCodes": [],
     "dietaryFlags": [],
-    "aliases": ["bulgogi beef", "sogogi"],
-    "sortOrder": 10
+    "aliases": [
+      "bulgogi beef",
+      "sogogi"
+    ],
+    "sortOrder": 10,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/beef-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/beef-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/beef-displacement.png"
   },
   "pork": {
     "id": "pork",
@@ -17,11 +27,21 @@
     "nameKey": "items.pork.name",
     "descriptionKey": "items.pork.description",
     "color": "#c56a45",
-    "tags": ["protein", "savory", "bibimbap"],
+    "tags": [
+      "protein",
+      "savory",
+      "bibimbap"
+    ],
     "allergenCodes": [],
     "dietaryFlags": [],
-    "aliases": ["pork belly", "dwaeji-gogi"],
-    "sortOrder": 20
+    "aliases": [
+      "pork belly",
+      "dwaeji-gogi"
+    ],
+    "sortOrder": 20,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/pork-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/pork-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/pork-displacement.png"
   },
   "tartare": {
     "id": "tartare",
@@ -29,11 +49,21 @@
     "nameKey": "items.tartare.name",
     "descriptionKey": "items.tartare.description",
     "color": "#b9403a",
-    "tags": ["protein", "raw", "savory"],
+    "tags": [
+      "protein",
+      "raw",
+      "savory"
+    ],
     "allergenCodes": [],
     "dietaryFlags": [],
-    "aliases": ["yukhoe", "beef tartare"],
-    "sortOrder": 30
+    "aliases": [
+      "yukhoe",
+      "beef tartare"
+    ],
+    "sortOrder": 30,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/tartare-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/tartare-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/tartare-displacement.png"
   },
   "chipotle": {
     "id": "chipotle",
@@ -41,11 +71,21 @@
     "nameKey": "items.chipotle.name",
     "descriptionKey": "items.chipotle.description",
     "color": "#8f2d1f",
-    "tags": ["protein", "spicy", "smoky", "fusion"],
+    "tags": [
+      "protein",
+      "spicy",
+      "smoky",
+      "fusion"
+    ],
     "allergenCodes": [],
     "dietaryFlags": [],
-    "aliases": ["chipotle meat"],
-    "sortOrder": 40
+    "aliases": [
+      "chipotle meat"
+    ],
+    "sortOrder": 40,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/chipotle-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/chipotle-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/chipotle-displacement.png"
   },
   "salmon": {
     "id": "salmon",
@@ -53,11 +93,22 @@
     "nameKey": "items.salmon.name",
     "descriptionKey": "items.salmon.description",
     "color": "#e07a5f",
-    "tags": ["protein", "seafood", "oily"],
-    "allergenCodes": ["fish"],
+    "tags": [
+      "protein",
+      "seafood",
+      "oily"
+    ],
+    "allergenCodes": [
+      "fish"
+    ],
     "dietaryFlags": [],
-    "aliases": ["yeoneo"],
-    "sortOrder": 110
+    "aliases": [
+      "yeoneo"
+    ],
+    "sortOrder": 110,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/salmon-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/salmon-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/salmon-displacement.png"
   },
   "salmonegg": {
     "id": "salmonegg",
@@ -65,11 +116,23 @@
     "nameKey": "items.salmonegg.name",
     "descriptionKey": "items.salmonegg.description",
     "color": "#f15b2a",
-    "tags": ["seafood", "roe", "briny"],
-    "allergenCodes": ["fish"],
+    "tags": [
+      "seafood",
+      "roe",
+      "briny"
+    ],
+    "allergenCodes": [
+      "fish"
+    ],
     "dietaryFlags": [],
-    "aliases": ["salmon roe", "ikura"],
-    "sortOrder": 120
+    "aliases": [
+      "salmon roe",
+      "ikura"
+    ],
+    "sortOrder": 120,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/salmonegg-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/salmonegg-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/salmonegg-displacement.png"
   },
   "tuna": {
     "id": "tuna",
@@ -77,11 +140,21 @@
     "nameKey": "items.tuna.name",
     "descriptionKey": "items.tuna.description",
     "color": "#b84a62",
-    "tags": ["protein", "seafood"],
-    "allergenCodes": ["fish"],
+    "tags": [
+      "protein",
+      "seafood"
+    ],
+    "allergenCodes": [
+      "fish"
+    ],
     "dietaryFlags": [],
-    "aliases": ["chamchi"],
-    "sortOrder": 130
+    "aliases": [
+      "chamchi"
+    ],
+    "sortOrder": 130,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/tuna-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/tuna-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/tuna-displacement.png"
   },
   "shrimp": {
     "id": "shrimp",
@@ -89,11 +162,23 @@
     "nameKey": "items.shrimp.name",
     "descriptionKey": "items.shrimp.description",
     "color": "#ee8f72",
-    "tags": ["protein", "seafood", "shellfish"],
-    "allergenCodes": ["shellfish"],
+    "tags": [
+      "protein",
+      "seafood",
+      "shellfish"
+    ],
+    "allergenCodes": [
+      "shellfish"
+    ],
     "dietaryFlags": [],
-    "aliases": ["saeu", "prawn"],
-    "sortOrder": 140
+    "aliases": [
+      "saeu",
+      "prawn"
+    ],
+    "sortOrder": 140,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/shrimp-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/shrimp-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/shrimp-displacement.png"
   },
   "uni": {
     "id": "uni",
@@ -101,11 +186,22 @@
     "nameKey": "items.uni.name",
     "descriptionKey": "items.uni.description",
     "color": "#f0a13a",
-    "tags": ["seafood", "roe", "creamy"],
-    "allergenCodes": ["shellfish"],
+    "tags": [
+      "seafood",
+      "roe",
+      "creamy"
+    ],
+    "allergenCodes": [
+      "shellfish"
+    ],
     "dietaryFlags": [],
-    "aliases": ["sea urchin"],
-    "sortOrder": 150
+    "aliases": [
+      "sea urchin"
+    ],
+    "sortOrder": 150,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/uni-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/uni-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/uni-displacement.png"
   },
   "gosari": {
     "id": "gosari",
@@ -113,11 +209,23 @@
     "nameKey": "items.gosari.name",
     "descriptionKey": "items.gosari.description",
     "color": "#7a5d3a",
-    "tags": ["namul", "earthy", "vegetable"],
+    "tags": [
+      "namul",
+      "earthy",
+      "vegetable"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["bracken fern"],
-    "sortOrder": 210
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "bracken fern"
+    ],
+    "sortOrder": 210,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/gosari-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/gosari-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/gosari-displacement.png"
   },
   "spinach": {
     "id": "spinach",
@@ -125,11 +233,23 @@
     "nameKey": "items.spinach.name",
     "descriptionKey": "items.spinach.description",
     "color": "#4f8f45",
-    "tags": ["namul", "green", "vegetable"],
+    "tags": [
+      "namul",
+      "green",
+      "vegetable"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["sigeumchi"],
-    "sortOrder": 220
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "sigeumchi"
+    ],
+    "sortOrder": 220,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/spinach-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/spinach-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/spinach-displacement.png"
   },
   "lentinus": {
     "id": "lentinus",
@@ -137,11 +257,23 @@
     "nameKey": "items.lentinus.name",
     "descriptionKey": "items.lentinus.description",
     "color": "#8a5a3c",
-    "tags": ["mushroom", "umami"],
+    "tags": [
+      "mushroom",
+      "umami"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["shiitake", "pyogo beoseot"],
-    "sortOrder": 310
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "shiitake",
+      "pyogo beoseot"
+    ],
+    "sortOrder": 310,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/lentinus-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/lentinus-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/lentinus-displacement.png"
   },
   "pleurotus": {
     "id": "pleurotus",
@@ -149,11 +281,24 @@
     "nameKey": "items.pleurotus.name",
     "descriptionKey": "items.pleurotus.description",
     "color": "#b7a58a",
-    "tags": ["mushroom", "soft", "umami"],
+    "tags": [
+      "mushroom",
+      "soft",
+      "umami"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["oyster mushroom", "neutari beoseot"],
-    "sortOrder": 320
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "oyster mushroom",
+      "neutari beoseot"
+    ],
+    "sortOrder": 320,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/pleurotus-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/pleurotus-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/pleurotus-displacement.png"
   },
   "kimchi": {
     "id": "kimchi",
@@ -161,11 +306,22 @@
     "nameKey": "items.kimchi.name",
     "descriptionKey": "items.kimchi.description",
     "color": "#b92f25",
-    "tags": ["vegetable", "fermented", "spicy"],
+    "tags": [
+      "vegetable",
+      "fermented",
+      "spicy"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian"],
-    "aliases": ["baechu kimchi"],
-    "sortOrder": 410
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "aliases": [
+      "baechu kimchi"
+    ],
+    "sortOrder": 410,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/kimchi-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/kimchi-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/kimchi-displacement.png"
   },
   "radish": {
     "id": "radish",
@@ -173,11 +329,24 @@
     "nameKey": "items.radish.name",
     "descriptionKey": "items.radish.description",
     "color": "#eee3d1",
-    "tags": ["vegetable", "crisp", "fresh"],
+    "tags": [
+      "vegetable",
+      "crisp",
+      "fresh"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["mu", "Korean radish"],
-    "sortOrder": 420
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "mu",
+      "Korean radish"
+    ],
+    "sortOrder": 420,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/radish-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/radish-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/radish-displacement.png"
   },
   "corn": {
     "id": "corn",
@@ -185,11 +354,23 @@
     "nameKey": "items.corn.name",
     "descriptionKey": "items.corn.description",
     "color": "#f0c94b",
-    "tags": ["vegetable", "sweet", "fusion"],
+    "tags": [
+      "vegetable",
+      "sweet",
+      "fusion"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["sweet corn"],
-    "sortOrder": 430
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "sweet corn"
+    ],
+    "sortOrder": 430,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/corn-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/corn-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/corn-displacement.png"
   },
   "greenpea": {
     "id": "greenpea",
@@ -197,11 +378,23 @@
     "nameKey": "items.greenpea.name",
     "descriptionKey": "items.greenpea.description",
     "color": "#72a84f",
-    "tags": ["vegetable", "green", "sweet"],
+    "tags": [
+      "vegetable",
+      "green",
+      "sweet"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["green pea"],
-    "sortOrder": 440
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "green pea"
+    ],
+    "sortOrder": 440,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/greenpea-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/greenpea-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/greenpea-displacement.png"
   },
   "tofu": {
     "id": "tofu",
@@ -209,11 +402,25 @@
     "nameKey": "items.tofu.name",
     "descriptionKey": "items.tofu.description",
     "color": "#eee5d0",
-    "tags": ["protein", "soy", "mild"],
-    "allergenCodes": ["soy"],
-    "dietaryFlags": ["vegetarian", "vegan"],
-    "aliases": ["dubu"],
-    "sortOrder": 450
+    "tags": [
+      "protein",
+      "soy",
+      "mild"
+    ],
+    "allergenCodes": [
+      "soy"
+    ],
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
+    "aliases": [
+      "dubu"
+    ],
+    "sortOrder": 450,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/tofu-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/tofu-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/tofu-displacement.png"
   },
   "avocado": {
     "id": "avocado",
@@ -221,11 +428,22 @@
     "nameKey": "items.avocado.name",
     "descriptionKey": "items.avocado.description",
     "color": "#7fb069",
-    "tags": ["fruit", "fresh", "creamy", "fusion"],
+    "tags": [
+      "fruit",
+      "fresh",
+      "creamy",
+      "fusion"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
     "aliases": [],
-    "sortOrder": 510
+    "sortOrder": 510,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/avocado-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/avocado-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/avocado-displacement.png"
   },
   "olive": {
     "id": "olive",
@@ -233,11 +451,21 @@
     "nameKey": "items.olive.name",
     "descriptionKey": "items.olive.description",
     "color": "#5f6f3e",
-    "tags": ["fruit", "briny", "fusion"],
+    "tags": [
+      "fruit",
+      "briny",
+      "fusion"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
     "aliases": [],
-    "sortOrder": 520
+    "sortOrder": 520,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/olive-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/olive-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/olive-displacement.png"
   },
   "pineapple": {
     "id": "pineapple",
@@ -245,11 +473,22 @@
     "nameKey": "items.pineapple.name",
     "descriptionKey": "items.pineapple.description",
     "color": "#f0c241",
-    "tags": ["fruit", "sweet", "tropical", "fusion"],
+    "tags": [
+      "fruit",
+      "sweet",
+      "tropical",
+      "fusion"
+    ],
     "allergenCodes": [],
-    "dietaryFlags": ["vegetarian", "vegan"],
+    "dietaryFlags": [
+      "vegetarian",
+      "vegan"
+    ],
     "aliases": [],
-    "sortOrder": 530
+    "sortOrder": 530,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/pineapple-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/pineapple-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/pineapple-displacement.png"
   },
   "macaroni": {
     "id": "macaroni",
@@ -257,10 +496,23 @@
     "nameKey": "items.macaroni.name",
     "descriptionKey": "items.macaroni.description",
     "color": "#e8c987",
-    "tags": ["pasta", "mild", "fusion"],
-    "allergenCodes": ["wheat"],
-    "dietaryFlags": ["vegetarian"],
-    "aliases": ["macaroni pasta"],
-    "sortOrder": 610
+    "tags": [
+      "pasta",
+      "mild",
+      "fusion"
+    ],
+    "allergenCodes": [
+      "wheat"
+    ],
+    "dietaryFlags": [
+      "vegetarian"
+    ],
+    "aliases": [
+      "macaroni pasta"
+    ],
+    "sortOrder": 610,
+    "diffuseMapUrl": "3d/maps/cuisines/ingredients/macaroni-diffuse.png",
+    "normalMapUrl": "3d/maps/cuisines/ingredients/macaroni-normal.png",
+    "displacementMapUrl": "3d/maps/cuisines/ingredients/macaroni-displacement.png"
   }
 }

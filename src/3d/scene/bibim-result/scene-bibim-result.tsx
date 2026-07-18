@@ -1,14 +1,22 @@
 import { useMemo } from "react";
 
+import { TexturedPieSlice } from "@/shared/3d/ui/textured-pie-slice";
+
 export type BibimResultSceneSlice = {
   color: string;
+  diffuseMapUrl?: string;
+  displacementMapUrl?: string;
   id: string;
+  normalMapUrl?: string;
   value: number;
 };
 
 type BibimResultSceneSliceMesh = {
   color: string;
+  diffuseMapUrl?: string;
+  displacementMapUrl?: string;
   id: string;
+  normalMapUrl?: string;
   thetaLength: number;
   thetaStart: number;
 };
@@ -42,7 +50,10 @@ function createSliceMeshes(
         ...sliceMeshes,
         {
           color: slice.color,
+          diffuseMapUrl: slice.diffuseMapUrl,
+          displacementMapUrl: slice.displacementMapUrl,
           id: slice.id,
+          normalMapUrl: slice.normalMapUrl,
           thetaLength: (slice.value / totalValue) * Math.PI * 2,
           thetaStart,
         },
@@ -58,21 +69,15 @@ export function ThreeSceneBibimResult({ slices }: ThreeSceneBibimResultProps) {
   return (
     <group position={[0, 0.25, 0]}>
       {sliceMeshes.map((slice) => (
-        <mesh key={slice.id} castShadow receiveShadow>
-          <cylinderGeometry
-            args={[
-              0.95,
-              0.95,
-              0.22,
-              64,
-              1,
-              false,
-              slice.thetaStart,
-              slice.thetaLength,
-            ]}
-          />
-          <meshStandardMaterial color={slice.color} roughness={0.72} />
-        </mesh>
+        <TexturedPieSlice
+          key={slice.id}
+          diffuseMapUrl={slice.diffuseMapUrl}
+          displacementMapUrl={slice.displacementMapUrl}
+          fallbackColor={slice.color}
+          normalMapUrl={slice.normalMapUrl}
+          thetaLength={slice.thetaLength}
+          thetaStart={slice.thetaStart}
+        />
       ))}
       <mesh position={[0, -0.14, 0]} receiveShadow>
         <cylinderGeometry args={[1.02, 1.02, 0.08, 96]} />

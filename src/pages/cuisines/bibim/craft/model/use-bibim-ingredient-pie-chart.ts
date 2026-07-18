@@ -7,7 +7,7 @@ import {
   useBibimCraftStore,
 } from "./bibim-craft-store";
 
-const MIN_INGREDIENT_VALUE = 10;
+const MIN_INGREDIENT_VALUE = 15;
 const MIN_EMPTY_INGREDIENT_VALUE = 0;
 
 export function useBibimIngredientPieChart() {

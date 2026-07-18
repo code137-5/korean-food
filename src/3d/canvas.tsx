@@ -1,95 +1,18 @@
-﻿import { Canvas, useThree } from "@react-three/fiber";
-import { useEffect, useMemo } from "react";
+import { Canvas } from "@react-three/fiber";
+import { ContactShadows, Grid, OrbitControls } from "@react-three/drei";
+import { useMemo } from "react";
 import {
-  ContactShadows,
-  Grid,
-  OrbitControls,
-  useGLTF,
-} from "@react-three/drei";
-import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
-import {
-  ACESFilmicToneMapping,
   NeutralToneMapping,
   PCFSoftShadowMap,
   SRGBColorSpace,
 } from "three";
-import { TexturedScreen } from "@/shared/ui/textured-ui";
+
+import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
 import { useBibimCraftResultIngredientsQuery } from "@/pages/cuisines/bibim/craft/result/model/use-bibim-craft-result-ingredients-query";
+import { TexturedScreen } from "@/shared/ui/textured-ui";
+
 import { ThreeSceneCamera } from "./scene/scene-camera";
 import { useCurrentThreeScene } from "./scene/model";
-import { createDisplaceableCylinderTopGeometry } from "@/shared/3d/geometry";
-import * as THREE from "three";
-import { textureLoader } from "@/shared/3d/loader/texture-loader";
-import { replaceDisplacementMapWithWeightedChunk } from "@/shared/3d/material";
-
-function ThreeFood() {
-  const model = useGLTF("/3d/foods/Pressed Flower Coasters.glb");
-
-  return <primitive object={model.scene.clone()} />;
-}
-
-interface ThreePieProp {
-  startAngle: number;
-  diffAngle: number;
-  order: number;
-}
-
-function ThreePie({ startAngle, diffAngle, order }: ThreePieProp) {
-  const { scene } = useThree();
-
-  useEffect(() => {
-    const geometry = createDisplaceableCylinderTopGeometry({
-      thetaStart: startAngle,
-      thetaLength: diffAngle,
-      radialSegments: Math.round(128 * (diffAngle / (Math.PI * 2))),
-      thetaSegments: Math.round(256 * (diffAngle / (Math.PI * 2))),
-      height: 0.3,
-    });
-    const material = new THREE.MeshStandardMaterial();
-    const mesh = new THREE.Mesh(geometry, material);
-
-    const ingredient = order % 2 === 0 ? "tuna" : "tofu";
-    Promise.all([
-      textureLoader.loadAsync(
-        `3d/maps/cuisines/ingredients/${ingredient}-diffuse.png`,
-      ),
-      textureLoader.loadAsync(
-        `3d/maps/cuisines/ingredients/${ingredient}-displacement.png`,
-      ),
-      textureLoader.loadAsync(
-        `3d/maps/cuisines/ingredients/${ingredient}-normal.png`,
-      ),
-    ]).then((res) => {
-      res[0].colorSpace = THREE.SRGBColorSpace;
-      const mat = new THREE.MeshStandardMaterial({
-        // wireframe: true,
-        map: res[0],
-        displacementMap: res[1],
-        displacementScale: 0.2,
-        normalMap: res[2],
-        normalScale: new THREE.Vector2(0.3, 0.3),
-        // roughness: 0.2,
-      });
-
-      mat.onBeforeCompile = replaceDisplacementMapWithWeightedChunk;
-      mat.customProgramCacheKey = () =>
-        "displacement-weighted-displacement-map";
-
-      mesh.material = mat;
-    });
-
-    scene.add(mesh);
-    mesh.position.set(0, 0.5, 0);
-
-    return () => {
-      scene.remove(mesh);
-      geometry.dispose();
-      material.dispose();
-    };
-  }, [scene, startAngle, diffAngle, order]);
-
-  return null;
-}
 
 export function ThreeCanvas() {
   const scene = useCurrentThreeScene();
@@ -100,14 +23,15 @@ export function ThreeCanvas() {
       bibimCraftResultIngredientsQuery.data.map(
         ({ ingredient, ingredientId, value }) => ({
           color: ingredient.color ?? "#7fb069",
+          diffuseMapUrl: ingredient.diffuseMapUrl,
+          displacementMapUrl: ingredient.displacementMapUrl,
           id: ingredientId,
+          normalMapUrl: ingredient.normalMapUrl,
           value,
         }),
       ),
     [bibimCraftResultIngredientsQuery.data],
   );
-
-  const arr = useMemo(() => Array.from({ length: 6 }, (_, i) => i), []);
 
   return (
     <div className="relative block w-full h-full">
@@ -190,17 +114,6 @@ export function ThreeCanvas() {
           color="#24170f"
         />
         <Grid infiniteGrid />
-        {/* <ThreeFood /> */}
-        {arr.map((i) => (
-          <ThreePie
-            key={`ThreePie-${i}`}
-            order={i}
-            startAngle={i * (Math.PI / 3)}
-            diffAngle={Math.PI / 3}
-          />
-        ))}
-        {/* {Array([])} */}
-        {/* <ThreePie order={0} startAngle={0} diffAngle={Math.PI / 3} /> */}
       </Canvas>
     </div>
   );
