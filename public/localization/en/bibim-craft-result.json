@@ -1,0 +1,12 @@
+{
+  "title": "Share My Bibimbap",
+  "navigation": {
+    "back": "Back"
+  },
+  "actions": {
+    "snsShare": "Share",
+    "copyLink": "Copy Link",
+    "downloadGlb": "Download GLB",
+    "remake": "Remake"
+  }
+}

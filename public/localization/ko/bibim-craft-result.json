@@ -1,0 +1,12 @@
+{
+  "title": "나만의 비빔밥 공유",
+  "navigation": {
+    "back": "뒤로가기"
+  },
+  "actions": {
+    "snsShare": "SNS 공유",
+    "copyLink": "링크 복사",
+    "downloadGlb": "glb 다운로드",
+    "remake": "다시 만들기"
+  }
+}

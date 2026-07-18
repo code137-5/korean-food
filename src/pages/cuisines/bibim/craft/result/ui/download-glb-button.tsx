@@ -1,6 +1,9 @@
 import { Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { ResultActionButton } from "./result-action-button";
 
 export function DownloadGlbButton() {
-  return <ResultActionButton icon={Download} label="glb 다운로드" />;
+  const { t } = useTranslation("bibim-craft-result");
+
+  return <ResultActionButton icon={Download} label={t("actions.downloadGlb")} />;
 }
