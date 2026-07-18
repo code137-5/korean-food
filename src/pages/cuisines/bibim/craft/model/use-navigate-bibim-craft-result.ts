@@ -1,5 +1,5 @@
+import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-navigate";
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 
 import {
   EMPTY_INGREDIENT_PIE_ITEM_ID,
@@ -18,7 +18,7 @@ function formatIngredientValue(value: number): string {
 }
 
 export function useNavigateBibimCraftResult() {
-  const navigate = useNavigate();
+  const navigate = useRouteTransitionNavigate();
   const ingredientPieItems = useBibimCraftStore(
     (state) => state.ingredientPieItems,
   );

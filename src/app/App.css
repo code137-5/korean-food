@@ -17,6 +17,54 @@
   }
 }
 
+.route-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: auto;
+  background: rgb(0 0 0);
+  opacity: 1;
+}
+
+.route-transition-overlay--covering {
+  animation: route-transition-cover 520ms ease-in-out both;
+}
+
+.route-transition-overlay--covered {
+  opacity: 1;
+}
+
+.route-transition-overlay--revealing {
+  animation: route-transition-reveal 520ms ease-in-out both;
+}
+
+@keyframes route-transition-cover {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes route-transition-reveal {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-transition-overlay--covering,
+  .route-transition-overlay--revealing {
+    animation-duration: 1ms;
+  }
+}
+
 .hero {
   position: relative;
 

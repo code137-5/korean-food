@@ -1,5 +1,5 @@
+import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-navigate";
 import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import { useSeasonCuisineSelection } from "@/pages/cuisines/seasons/model/use-season-cuisine-selection";
 import { CuisineNavigation } from "@/pages/cuisines/seasons/ui/cuisine-navigation";
 import { ProgressStatus } from "@/pages/cuisines/seasons/ui/progress-status";
@@ -7,7 +7,7 @@ import { FoodDetail } from "@/widgets/cuisine-detail";
 import { TexturedButton, TexturedPanel } from "@/shared/ui/textured-ui";
 
 export function SeasonCuisinePage() {
-  const navigate = useNavigate();
+  const navigate = useRouteTransitionNavigate();
   const {
     items,
     selectedIndex,

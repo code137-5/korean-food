@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-navigate";
 import { Button } from "@/components/ui/button";
 import { useSeasonCuisinesQuery, useSeasonStore } from "@/entities/season";
 import { SeasonMenuStatus } from "@/widgets/menu/ui/season-menu-status";
 
 export function SeasonMenu() {
   const { t } = useTranslation("season");
-  const navigate = useNavigate();
+  const navigate = useRouteTransitionNavigate();
   const season = useSeasonStore((s) => s.selectedSeason);
   const { data, isError, isLoading } = useSeasonCuisinesQuery();
   const content = season && data ? data[season] : null;

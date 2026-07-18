@@ -1,11 +1,11 @@
+import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-navigate";
 import { Button } from "@/components/ui/button";
 import { TexturedPanel } from "@/shared/ui/textured-ui";
 import { FoodDetail } from "@/widgets/cuisine-detail";
 import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export function BibimCuisinePage() {
-  const navigate = useNavigate();
+  const navigate = useRouteTransitionNavigate();
   return (
     <>
       <div className="absolute left-6 top-6 pointer-events-auto">

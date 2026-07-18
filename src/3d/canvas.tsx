@@ -1,11 +1,7 @@
-import { Canvas } from "@react-three/fiber";
+﻿import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Grid, OrbitControls } from "@react-three/drei";
 import { useMemo } from "react";
-import {
-  NeutralToneMapping,
-  PCFSoftShadowMap,
-  SRGBColorSpace,
-} from "three";
+import { NeutralToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
 
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
 import { useBibimCraftResultIngredientsQuery } from "@/pages/cuisines/bibim/craft/result/model/use-bibim-craft-result-ingredients-query";
@@ -113,7 +109,7 @@ export function ThreeCanvas() {
           resolution={1024}
           color="#24170f"
         />
-        <Grid infiniteGrid />
+        {/* <Grid infiniteGrid /> */}
       </Canvas>
     </div>
   );

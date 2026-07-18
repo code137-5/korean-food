@@ -1,9 +1,9 @@
+import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-navigate";
 import { TexturedButton } from "@/shared/ui/textured-ui";
 import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export function BackHomeButton() {
-  const navigate = useNavigate();
+  const navigate = useRouteTransitionNavigate();
 
   return (
     <TexturedButton

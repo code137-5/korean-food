@@ -2,6 +2,7 @@ import "@/app/App.css";
 import { ThreeCanvas } from "@/3d/canvas";
 import { Outlet } from "react-router-dom";
 import { LanguageToggle } from "@/app/ui/language-toggle";
+import { RouteTransitionProvider } from "@/app/routes/route-transition";
 
 function RoutedWidgets() {
   return (
@@ -18,12 +19,12 @@ function RoutedWidgets() {
 
 function App() {
   return (
-    <>
+    <RouteTransitionProvider>
       <RoutedWidgets />
       <div className="relative w-screen h-screen">
         <ThreeCanvas />
       </div>
-    </>
+    </RouteTransitionProvider>
   );
 }
 
