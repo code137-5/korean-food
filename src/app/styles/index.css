@@ -107,9 +107,9 @@
   .ui-textured-rounded-wood {
     border-image-source: url("/ui/wooden-rounded.png");
     border-image-slice: 198 204 111 200  fill;
-    border-image-width: 98px 102px 55px 100px;
-    min-height: 200px;
-    min-width: 200px;
+    border-image-width: 49px 51px 28px 50px;
+    min-height: 88px;
+    min-width: 102px;
     border-image-repeat: stretch;
 
   }
