@@ -32,7 +32,7 @@ type TexturedPieSliceProps = {
 
 const FULL_CIRCLE = Math.PI * 2;
 const DEFAULT_COLOR = "#d8c8a8";
-const DISPLACEMENT_SCALE = 0.4;
+const DISPLACEMENT_SCALE = 0.2;
 const DISPLACEMENT_WEIGHTED_PROGRAM_KEY =
   "displacement-weighted-displacement-map";
 
