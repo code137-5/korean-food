@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 
+import { GlbModel } from "@/shared/3d/ui/glb-model";
 import { TexturedPieSlice } from "@/shared/3d/ui/textured-pie-slice";
 
 export type BibimResultSceneSlice = {
@@ -30,6 +31,8 @@ const EMPTY_SLICE: BibimResultSceneSlice = {
   id: "empty",
   value: 100,
 };
+const BOWL_MODEL_URL = "3d/items/DarkStoneBowl.glb";
+const FRIEDEGG_MODEL_URL = "3d/items/FriedEgg.glb";
 
 function createSliceMeshes(
   slices: BibimResultSceneSlice[],
@@ -67,22 +70,22 @@ export function ThreeSceneBibimResult({ slices }: ThreeSceneBibimResultProps) {
   const sliceMeshes = useMemo(() => createSliceMeshes(slices), [slices]);
 
   return (
-    <group position={[0, 0.25, 0]}>
-      {sliceMeshes.map((slice) => (
-        <TexturedPieSlice
-          key={slice.id}
-          diffuseMapUrl={slice.diffuseMapUrl}
-          displacementMapUrl={slice.displacementMapUrl}
-          fallbackColor={slice.color}
-          normalMapUrl={slice.normalMapUrl}
-          thetaLength={slice.thetaLength}
-          thetaStart={slice.thetaStart}
-        />
-      ))}
-      <mesh position={[0, -0.14, 0]} receiveShadow>
-        <cylinderGeometry args={[1.02, 1.02, 0.08, 96]} />
-        <meshStandardMaterial color="#efe3c2" roughness={0.86} />
-      </mesh>
-    </group>
+    <>
+      <group position={[0, 0.8, 0]}>
+        {sliceMeshes.map((slice) => (
+          <TexturedPieSlice
+            key={slice.id}
+            diffuseMapUrl={slice.diffuseMapUrl}
+            displacementMapUrl={slice.displacementMapUrl}
+            fallbackColor={slice.color}
+            normalMapUrl={slice.normalMapUrl}
+            thetaLength={slice.thetaLength}
+            thetaStart={slice.thetaStart}
+          />
+        ))}
+      </group>
+      <GlbModel url={BOWL_MODEL_URL} scale={2.45} />
+      <GlbModel position={[0, 0.9, 0]} url={FRIEDEGG_MODEL_URL} />
+    </>
   );
 }

@@ -55,7 +55,7 @@ export function TexturedPieSlice({
         height,
         radius,
         radialSegments: Math.round(128 * (thetaLength / FULL_CIRCLE)),
-        thetaLength,
+        thetaLength: thetaLength + Math.PI / 60,
         thetaSegments: Math.round(256 * (thetaLength / FULL_CIRCLE)),
         thetaStart,
       }),
@@ -79,7 +79,11 @@ export function TexturedPieSlice({
     );
   }, [geometry, height, textureMaps]);
   const biasedPosition = useMemo<[number, number, number]>(
-    () => [position?.[0] ?? 0, (position?.[1] ?? 0) + yBias, position?.[2] ?? 0],
+    () => [
+      position?.[0] ?? 0,
+      (position?.[1] ?? 0) + yBias,
+      position?.[2] ?? 0,
+    ],
     [position, yBias],
   );
 
@@ -143,7 +147,12 @@ export function TexturedPieSlice({
   }, [diffuseMapUrl, displacementMapUrl, normalMapUrl]);
 
   return (
-    <mesh castShadow geometry={geometry} position={biasedPosition} receiveShadow>
+    <mesh
+      castShadow
+      geometry={geometry}
+      position={biasedPosition}
+      receiveShadow
+    >
       <meshStandardMaterial
         key={textureMaps ? "textured" : "fallback"}
         color={textureMaps ? "white" : fallbackColor}
