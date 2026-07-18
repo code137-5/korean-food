@@ -1,12 +1,12 @@
+import { BackRouteButton } from "@/widgets/common/back-route-button";
+
 export function BibimCraftResultPage() {
-  return null;
-  /* return (
-    <div className="absolute inset-0 pointer-events-auto">
-      <div className="flex h-full w-full items-center justify-center p-6">
-        <div className="text-center text-[#f4ead7]">
-          <h1 className="text-3xl font-semibold">완료</h1>
-        </div>
+  return (
+    <div className="pointer-events-none absolute inset-0">
+      <div className="absolute left-5 top-5 pointer-events-auto">
+        <BackRouteButton url="/cuisines/bibim/craft" />
       </div>
+      <div className="absolute right-5 bottom-5 ui-textured-rounded-wood w-[min(480px,calc(100vw-40px))]"></div>
     </div>
-  ); */
+  );
 }

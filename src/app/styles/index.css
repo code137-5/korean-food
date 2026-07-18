@@ -75,6 +75,17 @@
     cursor: pointer;
   }
 
+  .ui-textured-button:disabled {
+    filter: grayscale(100%) brightness(70%);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .ui-textured-button:disabled:hover {
+    filter: grayscale(100%) brightness(70%);
+    cursor: not-allowed;
+  }
+
   .ui-textured-panel-golden {
     border-image-source: url("/ui/panel-golden.png");
     border-image-slice: 79 88 88 86 fill;
@@ -91,6 +102,16 @@
     min-height: 42px;
     min-width: 42px;
     border-image-repeat: stretch;
+  }
+
+  .ui-textured-rounded-wood {
+    border-image-source: url("/ui/wooden-rounded.png");
+    border-image-slice: 198 204 111 200  fill;
+    border-image-width: 98px 102px 55px 100px;
+    min-height: 200px;
+    min-width: 200px;
+    border-image-repeat: stretch;
+
   }
 
   .ui-textured-screen {
