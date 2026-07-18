@@ -41,23 +41,23 @@ function ThreePie({ startAngle, diffAngle, order }: ThreePieProp) {
     const geometry = createDisplaceableCylinderTopGeometry({
       thetaStart: startAngle,
       thetaLength: diffAngle,
-      radialSegments: 64,
-      thetaSegments: 128,
+      radialSegments: Math.round(128 * (diffAngle / (Math.PI * 2))),
+      thetaSegments: Math.round(256 * (diffAngle / (Math.PI * 2))),
       height: 0.3,
     });
     const material = new THREE.MeshStandardMaterial();
     const mesh = new THREE.Mesh(geometry, material);
 
-    const ingredient = order % 2 === 0 ? "gosari" : "tofu";
+    const ingredient = order % 2 === 0 ? "avocado" : "tofu";
     Promise.all([
       textureLoader.loadAsync(
         `3d/maps/cuisines/ingredients/${ingredient}-diffuse.png`,
       ),
       textureLoader.loadAsync(
-        `3d/maps/cuisines/ingredients/${ingredient}2-displacement.png`,
+        `3d/maps/cuisines/ingredients/${ingredient}-displacement.png`,
       ),
       textureLoader.loadAsync(
-        `3d/maps/cuisines/ingredients/${ingredient}2-normal.png`,
+        `3d/maps/cuisines/ingredients/${ingredient}-normal.png`,
       ),
     ]).then((res) => {
       res[0].colorSpace = THREE.SRGBColorSpace;
@@ -199,8 +199,8 @@ export function ThreeCanvas() {
             diffAngle={Math.PI / 3}
           />
         ))}
-        {Array([])}
-        {/* <ThreePie order={0} startAngle={0} diffAngle={Math.PI / 12} /> */}
+        {/* {Array([])} */}
+        {/* <ThreePie order={0} startAngle={0} diffAngle={Math.PI / 3} /> */}
       </Canvas>
     </div>
   );

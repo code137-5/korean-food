@@ -136,9 +136,9 @@ export function createDisplaceableCylinderTopGeometry({
       const theta = thetaStart + thetaLength * thetaRatio;
       const sliceHeightFactor = getSliceHeightFactor(thetaRatio, thetaLength);
       const x = ringRadius * Math.sin(theta);
-      const y = topY * sliceHeightFactor;
+      const y = topY; // * sliceHeightFactor;
       const z = ringRadius * Math.cos(theta);
-      const normal = getSliceNormal(
+      /* const normal = getSliceNormal(
         thetaRatio,
         theta,
         thetaLength,
@@ -146,18 +146,13 @@ export function createDisplaceableCylinderTopGeometry({
         normalizedRadius / ringCount,
         topY,
         sliceCount,
-      );
+      ); */
+      const normal = [0, 1, 0];
 
       positions.push(x, y, z);
       normals.push(...normal);
       uvs.push((x / uvRadius + 1) / 2, (z / uvRadius + 1) / 2);
-      displacementWeights.push(
-        sliceHeightFactor *
-          sliceHeightFactor *
-          sliceHeightFactor *
-          sliceHeightFactor *
-          sliceHeightFactor,
-      );
+      displacementWeights.push(sliceHeightFactor);
     }
   }
 
