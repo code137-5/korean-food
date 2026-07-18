@@ -6,12 +6,14 @@ interface ResultActionButtonProps
   extends Omit<ComponentProps<"button">, "children"> {
   icon: LucideIcon;
   label: string;
+  labelClassName?: string;
 }
 
 export function ResultActionButton({
   className,
   icon: Icon,
   label,
+  labelClassName,
   ...buttonProps
 }: ResultActionButtonProps) {
   return (
@@ -24,7 +26,7 @@ export function ResultActionButton({
       {...buttonProps}
     >
       <Icon className="size-8 shrink-0" aria-hidden="true" />
-      <span className="text-lg">{label}</span>
+      <span className={cn("text-lg", labelClassName)}>{label}</span>
     </button>
   );
 }

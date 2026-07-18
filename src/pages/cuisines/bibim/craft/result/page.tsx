@@ -21,8 +21,6 @@ export function BibimCraftResultPage() {
         <div className="grid grid-cols-2 gap-4">
           <SnsShareButton />
           <CopyLinkButton />
-          {/* <DownloadGlbButton />
-          <RemakeButton /> */}
         </div>
       </section>
     </div>
