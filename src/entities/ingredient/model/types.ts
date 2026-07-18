@@ -4,6 +4,7 @@ export type IngredientCategoryCode =
   | "namul"
   | "mushroom"
   | "vegetable"
+  | "fruit"
   | "sauce"
   | "etc";
 

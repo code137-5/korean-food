@@ -1,10 +1,11 @@
 {
   "categories": {
     "meat": "고기",
-    "fish": "생선",
+    "fish": "어류",
     "namul": "나물",
     "mushroom": "버섯",
     "vegetable": "채소",
+    "fruit": "과일",
     "sauce": "양념",
     "etc": "기타"
   },
@@ -16,29 +17,41 @@
     "name": "아무것도 없음"
   },
   "items": {
-    "pork": {
-      "name": "돼지고기",
-      "description": "찌개, 덮밥, 구이 등에 자주 쓰이는 고소한 고기 재료입니다."
-    },
     "beef": {
       "name": "소고기",
-      "description": "불고기, 국, 밥 요리와 명절 음식에 잘 어울리는 깊은 맛의 단백질 재료입니다."
+      "description": "비빔밥에 깊고 고소한 맛을 더하는 든든한 고기 재료입니다."
     },
-    "chicken": {
-      "name": "닭고기",
-      "description": "국물, 조림, 일상식에 두루 쓰기 좋은 담백한 단백질 재료입니다."
+    "pork": {
+      "name": "돼지고기",
+      "description": "밥과 매콤한 양념에 잘 어울리는 감칠맛 있는 고기 재료입니다."
     },
-    "mackerel": {
-      "name": "고등어",
-      "description": "기름지고 깊은 맛이 있어 구이나 조림에 자주 쓰이는 생선입니다."
+    "tartare": {
+      "name": "육회",
+      "description": "깔끔하면서도 진한 풍미를 가진 한국식 생고기 재료입니다."
+    },
+    "chipotle": {
+      "name": "치폴레 고기",
+      "description": "훈연 향과 매콤함을 더하는 퓨전 스타일의 고기 재료입니다."
     },
     "salmon": {
       "name": "연어",
-      "description": "부드러운 식감과 선명한 색감을 가진 생선 재료입니다."
+      "description": "부드러운 식감과 선명한 색감을 가진 어류 재료입니다."
+    },
+    "salmonegg": {
+      "name": "연어알",
+      "description": "톡톡 터지는 식감과 짭조름한 바다 풍미를 더하는 재료입니다."
     },
     "tuna": {
       "name": "참치",
-      "description": "밥 요리, 샐러드, 간편식에 쓰기 좋은 단단한 해산물 재료입니다."
+      "description": "탄탄한 식감으로 밥 위에 올리기 좋은 어류 재료입니다."
+    },
+    "shrimp": {
+      "name": "새우",
+      "description": "달큰하고 탱글한 식감을 가진 해산물 재료입니다."
+    },
+    "uni": {
+      "name": "성게알",
+      "description": "부드럽고 진한 바다 향을 가진 고급 해산물 재료입니다."
     },
     "gosari": {
       "name": "고사리",
@@ -46,67 +59,51 @@
     },
     "spinach": {
       "name": "시금치",
-      "description": "데친 뒤 참기름과 함께 무쳐 먹기 좋은 푸른 채소입니다."
+      "description": "살짝 데쳐 참기름과 함께 무치면 좋은 푸른 채소입니다."
     },
-    "bean_sprout": {
-      "name": "콩나물",
-      "description": "아삭한 식감과 깔끔한 맛을 가진 콩나물 재료입니다."
-    },
-    "mung_bean_sprout": {
-      "name": "숙주나물",
-      "description": "가벼운 나물, 국물, 볶음 요리에 어울리는 부드러운 새싹 재료입니다."
-    },
-    "shiitake": {
+    "lentinus": {
       "name": "표고버섯",
-      "description": "깊은 감칠맛과 향긋한 식감을 가진 버섯입니다."
+      "description": "깊은 감칠맛과 쫄깃한 식감을 가진 버섯 재료입니다."
     },
-    "oyster_mushroom": {
+    "pleurotus": {
       "name": "느타리버섯",
-      "description": "양념과 국물을 잘 머금는 부드러운 버섯입니다."
+      "description": "양념을 잘 머금고 부드럽게 어우러지는 버섯 재료입니다."
     },
-    "enoki": {
-      "name": "팽이버섯",
-      "description": "국물 요리와 전골에 자주 쓰이는 가늘고 아삭한 버섯입니다."
+    "kimchi": {
+      "name": "김치",
+      "description": "매콤하고 새콤한 발효 풍미를 더하는 채소 재료입니다."
     },
-    "carrot": {
-      "name": "당근",
-      "description": "단맛과 선명한 색감을 더해 주는 채소입니다."
+    "radish": {
+      "name": "무",
+      "description": "아삭하고 시원한 맛을 가진 한국 무 재료입니다."
     },
-    "zucchini": {
-      "name": "애호박",
-      "description": "볶음이나 찌개에 자주 들어가는 담백한 재료입니다."
+    "corn": {
+      "name": "옥수수",
+      "description": "달콤한 알갱이로 색감과 톡톡한 식감을 더합니다."
     },
-    "cucumber": {
-      "name": "오이",
-      "description": "생으로 먹거나 무침, 절임에 쓰기 좋은 시원한 채소입니다."
+    "greenpea": {
+      "name": "완두콩",
+      "description": "작고 푸른 알갱이로 은은한 단맛을 더하는 채소입니다."
     },
-    "gochujang": {
-      "name": "고추장",
-      "description": "매운맛, 단맛, 감칠맛을 함께 내는 발효 고추 양념입니다."
-    },
-    "soysauce": {
-      "name": "간장",
-      "description": "짭짤하고 감칠맛을 내는 기본 발효 양념입니다."
-    },
-    "soybean": {
-      "name": "된장",
-      "description": "국물과 양념에 구수한 맛을 더하는 발효 콩장입니다."
-    },
-    "ssamjang": {
-      "name": "쌈장",
-      "description": "쌈이나 구이와 함께 먹는 진하고 감칠맛 있는 양념장입니다."
-    },
-    "sesame_oil": {
-      "name": "참기름",
-      "description": "완성된 음식에 고소한 향을 더하는 향미유입니다."
-    },
-    "egg": {
-      "name": "달걀",
-      "description": "단백질, 고명, 결착 재료로 두루 쓰이는 재료입니다."
+    "tofu": {
+      "name": "두부",
+      "description": "부드럽고 담백해 강한 양념을 잘 받아주는 콩 단백질 재료입니다."
     },
     "avocado": {
       "name": "아보카도",
-      "description": "현대적인 밥 요리에 부드럽고 고소한 질감을 더할 수 있는 재료입니다."
+      "description": "부드럽고 고소한 질감을 더하는 현대적인 과일 재료입니다."
+    },
+    "olive": {
+      "name": "올리브",
+      "description": "짭조름한 풍미를 더하는 퓨전 스타일의 과일 재료입니다."
+    },
+    "pineapple": {
+      "name": "파인애플",
+      "description": "상큼하고 달콤한 과즙을 더하는 열대 과일 재료입니다."
+    },
+    "macaroni": {
+      "name": "마카로니",
+      "description": "부드러운 파스타 식감으로 재미를 더하는 퓨전 재료입니다."
     }
   }
 }

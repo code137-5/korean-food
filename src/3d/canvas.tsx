@@ -48,7 +48,7 @@ function ThreePie({ startAngle, diffAngle, order }: ThreePieProp) {
     const material = new THREE.MeshStandardMaterial();
     const mesh = new THREE.Mesh(geometry, material);
 
-    const ingredient = order % 2 === 0 ? "avocado" : "tofu";
+    const ingredient = order % 2 === 0 ? "tuna" : "tofu";
     Promise.all([
       textureLoader.loadAsync(
         `3d/maps/cuisines/ingredients/${ingredient}-diffuse.png`,

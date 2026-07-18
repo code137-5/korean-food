@@ -5,6 +5,7 @@
     "namul": "Namul",
     "mushroom": "Mushroom",
     "vegetable": "Vegetable",
+    "fruit": "Fruit",
     "sauce": "Sauce",
     "etc": "Other"
   },
@@ -16,29 +17,41 @@
     "name": "Nothing selected"
   },
   "items": {
-    "pork": {
-      "name": "Pork",
-      "description": "A savory meat ingredient often used in stews, rice bowls, and grilled dishes."
-    },
     "beef": {
       "name": "Beef",
-      "description": "A rich protein used for bulgogi, soups, rice bowls, and festive dishes."
+      "description": "A rich protein that gives bibimbap a savory, hearty base."
     },
-    "chicken": {
-      "name": "Chicken",
-      "description": "A mild protein that works well in soups, braises, and everyday meals."
+    "pork": {
+      "name": "Pork",
+      "description": "A savory meat ingredient that works well with rice and spicy seasoning."
     },
-    "mackerel": {
-      "name": "Mackerel",
-      "description": "An oily fish with a deep flavor, commonly grilled or braised."
+    "tartare": {
+      "name": "Yukhoe",
+      "description": "Korean-style beef tartare with a clean, rich flavor."
+    },
+    "chipotle": {
+      "name": "Chipotle Meat",
+      "description": "A smoky, spicy meat option for a fusion bibimbap bowl."
     },
     "salmon": {
       "name": "Salmon",
       "description": "A tender fish with a rich texture and bright color."
     },
+    "salmonegg": {
+      "name": "Salmon Roe",
+      "description": "Briny salmon roe that adds pop and seafood depth."
+    },
     "tuna": {
       "name": "Tuna",
-      "description": "A firm seafood ingredient used in rice dishes, salads, and quick meals."
+      "description": "A firm seafood ingredient used in rice bowls and fresh toppings."
+    },
+    "shrimp": {
+      "name": "Shrimp",
+      "description": "A sweet shellfish ingredient with a clean, springy bite."
+    },
+    "uni": {
+      "name": "Uni",
+      "description": "Creamy sea urchin with a deep ocean flavor."
     },
     "gosari": {
       "name": "Gosari",
@@ -48,65 +61,49 @@
       "name": "Spinach",
       "description": "A green vegetable often blanched and seasoned with sesame oil."
     },
-    "bean_sprout": {
-      "name": "Bean Sprout",
-      "description": "Soybean sprouts with a crisp texture and clean flavor."
-    },
-    "mung_bean_sprout": {
-      "name": "Mung Bean Sprout",
-      "description": "Tender sprouts used in light namul, soups, and stir-fries."
-    },
-    "shiitake": {
+    "lentinus": {
       "name": "Shiitake",
       "description": "A mushroom with deep umami and a firm bite."
     },
-    "oyster_mushroom": {
+    "pleurotus": {
       "name": "Oyster Mushroom",
       "description": "A soft mushroom that absorbs seasoning and broth well."
     },
-    "enoki": {
-      "name": "Enoki",
-      "description": "Thin, crisp mushrooms often used in soups and hot pots."
+    "kimchi": {
+      "name": "Kimchi",
+      "description": "Fermented cabbage with spicy, tangy depth."
     },
-    "carrot": {
-      "name": "Carrot",
-      "description": "A sweet vegetable that adds color and texture."
+    "radish": {
+      "name": "Radish",
+      "description": "A crisp Korean radish ingredient with a clean, refreshing bite."
     },
-    "zucchini": {
-      "name": "Zucchini",
-      "description": "A mild squash commonly sauteed or added to stews."
+    "corn": {
+      "name": "Corn",
+      "description": "Sweet kernels that add color and a gentle pop."
     },
-    "cucumber": {
-      "name": "Cucumber",
-      "description": "A refreshing vegetable used raw, seasoned, or pickled."
+    "greenpea": {
+      "name": "Green Pea",
+      "description": "Small green peas with a mild sweetness."
     },
-    "gochujang": {
-      "name": "Gochujang",
-      "description": "A fermented red pepper paste with spicy, sweet, and savory depth."
-    },
-    "soysauce": {
-      "name": "Soy Sauce",
-      "description": "A salty fermented sauce used as a base seasoning."
-    },
-    "soybean": {
-      "name": "Soybean Paste",
-      "description": "A fermented soybean paste that gives soups and sauces deep savoriness."
-    },
-    "ssamjang": {
-      "name": "Ssamjang",
-      "description": "A thick savory sauce used for wraps and grilled foods."
-    },
-    "sesame_oil": {
-      "name": "Sesame Oil",
-      "description": "A fragrant oil that adds nutty aroma to finished dishes."
-    },
-    "egg": {
-      "name": "Egg",
-      "description": "A versatile ingredient used as protein, garnish, or binder."
+    "tofu": {
+      "name": "Tofu",
+      "description": "A mild soy protein that balances stronger seasonings."
     },
     "avocado": {
       "name": "Avocado",
-      "description": "A creamy ingredient that can add richness to modern rice bowls."
+      "description": "A creamy fruit that adds richness to modern rice bowls."
+    },
+    "olive": {
+      "name": "Olive",
+      "description": "A briny fruit topping for a fusion-style bowl."
+    },
+    "pineapple": {
+      "name": "Pineapple",
+      "description": "A tropical fruit that adds juicy sweetness."
+    },
+    "macaroni": {
+      "name": "Macaroni",
+      "description": "A soft pasta ingredient for a playful fusion texture."
     }
   }
 }
