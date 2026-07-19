@@ -14,7 +14,7 @@ function argsSetViewOffset(
       return [width, height, width / 4, -height / 7, width, height];
   }
 
-  return [width, height, 0, 0, width, height];
+  return [width, height, 0, -height / 7, width, height];
 }
 
 type ThreeSceneCameraProps = {

@@ -2,13 +2,12 @@ import { useRouteTransitionNavigate } from "@/app/routes/use-route-transition-na
 import { Button } from "@/components/ui/button";
 import { TexturedPanel } from "@/shared/ui/textured-ui";
 import { FoodDetail } from "@/widgets/cuisine-detail";
-import { ArrowLeft } from "lucide-react";
 
 export function BibimCuisinePage() {
   const navigate = useRouteTransitionNavigate();
   return (
     <>
-      <div className="absolute left-6 top-6 pointer-events-auto">
+      {/* <div className="absolute left-6 top-6 pointer-events-auto">
         <Button
           type="button"
           variant="secondary"
@@ -19,7 +18,7 @@ export function BibimCuisinePage() {
           <ArrowLeft aria-hidden="true" />
           홈으로
         </Button>
-      </div>
+      </div> */}
       <TexturedPanel
         variant="ink"
         className="absolute -right-6 h-[95%] w-[60%] px-36 pt-16 pb-20 pointer-events-auto"

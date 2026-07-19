@@ -93,7 +93,12 @@ export function ThreeCanvas() {
           />
         </Environment> */}
         <ambientLight intensity={2} color={"#bad8ff"} />
-        <OrbitControls />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 4}
+          minPolarAngle={Math.PI / 4}
+        />
         <ThreeSceneDispatcher
           bibimResultSlices={bibimResultSlices}
           scene={scene}
