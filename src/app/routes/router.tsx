@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "@/app/App";
 import NotFoundPage from "@/pages/not-found/NotFoundPage";
 import { HomePage } from "@/pages/home/page";
@@ -27,9 +27,9 @@ export const router = createBrowserRouter(
       children: [
         {
           index: true,
-          element: <HomePage />,
+          element: <BibimCuisinePage />,
           errorElement: <NotFoundPage />,
-          handle: { scene: "home" satisfies ThreeSceneType },
+          handle: { scene: "bibim" satisfies ThreeSceneType },
         },
         {
           path: "cuisines/seasons/:season",
@@ -39,9 +39,8 @@ export const router = createBrowserRouter(
         },
         {
           path: "cuisines/bibim",
-          element: <BibimCuisinePage />,
+          element: <Navigate to="/" replace />,
           errorElement: <NotFoundPage />,
-          handle: { scene: "bibim" satisfies ThreeSceneType },
         },
         {
           path: "cuisines/bibim/craft",
@@ -82,6 +81,12 @@ export const router = createBrowserRouter(
               errorElement: <NotFoundPage />,
             },
           ],
+        },
+        {
+          path: "home",
+          element: <HomePage />,
+          errorElement: <NotFoundPage />,
+          handle: { scene: "home" satisfies ThreeSceneType },
         },
         {
           path: "ui-test-bed",

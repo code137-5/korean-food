@@ -14,7 +14,7 @@ export function BibimCuisinePage() {
           variant="secondary"
           size="lg"
           className="border border-[#9f793e]/70 bg-[#20160d]/80 text-[#e9dcc6] hover:bg-[#2a1d11]"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
         >
           <ArrowLeft aria-hidden="true" />
           홈으로
