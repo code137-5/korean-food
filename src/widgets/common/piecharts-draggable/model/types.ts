@@ -1,6 +1,7 @@
 export type PieDatum = {
   id: string;
   name: string;
+  thumbnailImageUrl?: string;
   value: number;
   fill: string;
 };

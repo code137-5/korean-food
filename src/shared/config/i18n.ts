@@ -20,7 +20,13 @@ i18n
       escapeValue: false,
     },
     lng: defaultLanguage,
-    ns: ["season", "cuisine-detail", "ingredient", "bibim-craft-result"],
+    ns: [
+      "season",
+      "cuisine-detail",
+      "ingredient",
+      "bibim-craft-result",
+      "bibim-cuisine",
+    ],
     supportedLngs: ["ko", "en"],
     react: {
       useSuspense: false,

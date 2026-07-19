@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "back": "Back"
+  },
+  "actions": {
+    "makeBibimbap": "Make Bibimbap"
+  },
+  "craft": {
+    "title": "Select Bibimbap Ingredients",
+    "actions": {
+      "complete": "Complete"
+    }
+  }
+}

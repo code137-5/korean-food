@@ -1,0 +1,14 @@
+{
+  "navigation": {
+    "back": "뒤로가기"
+  },
+  "actions": {
+    "makeBibimbap": "비빔밥 만들기"
+  },
+  "craft": {
+    "title": "비빔밥 재료 선택",
+    "actions": {
+      "complete": "완료"
+    }
+  }
+}

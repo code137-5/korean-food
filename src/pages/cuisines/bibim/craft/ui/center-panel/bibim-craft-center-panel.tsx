@@ -1,4 +1,5 @@
 import { TexturedButton, TexturedPanel } from "@/shared/ui/textured-ui";
+import { useTranslation } from "react-i18next";
 import { useNavigateBibimCraftResult } from "../../model/use-navigate-bibim-craft-result";
 import { IngredientDiagram } from "./ingredient-diagram";
 import {
@@ -10,6 +11,7 @@ const COMPLETE_INGREDIENT_TOTAL_VALUE = 100;
 const INGREDIENT_TOTAL_VALUE_TOLERANCE = 0.5;
 
 export function BibimCraftCenterPanel() {
+  const { t } = useTranslation("bibim-cuisine");
   const navigateBibimCraftResult = useNavigateBibimCraftResult();
   const selectedIngredientTotalValue = useBibimCraftStore((state) =>
     state.ingredientPieItems
@@ -35,7 +37,7 @@ export function BibimCraftCenterPanel() {
         disabled={isResultNavigationDisabled}
         onClick={navigateBibimCraftResult}
       >
-        완료
+        {t("craft.actions.complete")}
       </TexturedButton>
     </TexturedPanel>
   );
