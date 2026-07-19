@@ -1,19 +1,39 @@
 ﻿import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Grid, OrbitControls } from "@react-three/drei";
-import { useMemo } from "react";
+import { Suspense, useEffect, useMemo } from "react";
 import { NeutralToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
 
 import { ThreeSceneDispatcher } from "@/3d/scene/scene-dispatcher";
+import { useIngredientsQuery } from "@/entities/ingredient";
 import { useBibimCraftResultIngredientsQuery } from "@/pages/cuisines/bibim/craft/result/model/use-bibim-craft-result-ingredients-query";
 import { TexturedScreen } from "@/shared/ui/textured-ui";
 
 import { ThreeSceneCamera } from "./scene/scene-camera";
 import { useCurrentThreeScene } from "./scene/model";
 
-export function ThreeCanvas() {
+type ThreeCanvasProps = {
+  onInitialSceneAssetsReady?: (isReady: boolean) => void;
+};
+
+function SceneAssetsReadyNotifier({
+  onReady,
+}: {
+  onReady?: (isReady: boolean) => void;
+}) {
+  useEffect(() => {
+    onReady?.(true);
+  }, [onReady]);
+
+  return null;
+}
+
+export function ThreeCanvas({ onInitialSceneAssetsReady }: ThreeCanvasProps) {
   const scene = useCurrentThreeScene();
+  const ingredientsQuery = useIngredientsQuery();
   const bibimCraftResultIngredientsQuery =
     useBibimCraftResultIngredientsQuery();
+  const isInitialSceneDataReady =
+    scene === "bibim" ? ingredientsQuery.isSuccess : true;
   const bibimResultSlices = useMemo(
     () =>
       bibimCraftResultIngredientsQuery.data.map(
@@ -99,10 +119,15 @@ export function ThreeCanvas() {
           maxPolarAngle={Math.PI / 4}
           minPolarAngle={Math.PI / 4}
         />
-        <ThreeSceneDispatcher
-          bibimResultSlices={bibimResultSlices}
-          scene={scene}
-        />
+        <Suspense fallback={null}>
+          <ThreeSceneDispatcher
+            bibimResultSlices={bibimResultSlices}
+            scene={scene}
+          />
+          {isInitialSceneDataReady && (
+            <SceneAssetsReadyNotifier onReady={onInitialSceneAssetsReady} />
+          )}
+        </Suspense>
         <ThreeSceneCamera scene={scene} />
 
         <ContactShadows

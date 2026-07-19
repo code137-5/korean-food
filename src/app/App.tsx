@@ -5,6 +5,7 @@ import { LanguageToggle } from "@/app/ui/language-toggle";
 import { LoopingBgm } from "@/app/audio/looping-bgm";
 import { RouteTransitionProvider } from "@/app/routes/route-transition";
 import { useCallback, useState } from "react";
+import { useIngredientsQuery } from "@/entities/ingredient";
 
 function RoutedWidgets() {
   return (
@@ -20,19 +21,25 @@ function RoutedWidgets() {
 }
 
 function App() {
+  const ingredientsQuery = useIngredientsQuery();
   const [isBgmEnabled, setIsBgmEnabled] = useState(false);
+  const [areInitialThreeAssetsReady, setAreInitialThreeAssetsReady] =
+    useState(false);
+  const isInitialRevealReady =
+    ingredientsQuery.isSuccess && areInitialThreeAssetsReady;
   const handleInitialRevealComplete = useCallback(() => {
     setIsBgmEnabled(true);
   }, []);
 
   return (
     <RouteTransitionProvider
+      isInitialRevealReady={isInitialRevealReady}
       onInitialRevealComplete={handleInitialRevealComplete}
     >
       <LoopingBgm isEnabled={isBgmEnabled} />
       <RoutedWidgets />
       <div className="relative w-screen h-screen">
-        <ThreeCanvas />
+        <ThreeCanvas onInitialSceneAssetsReady={setAreInitialThreeAssetsReady} />
       </div>
     </RouteTransitionProvider>
   );

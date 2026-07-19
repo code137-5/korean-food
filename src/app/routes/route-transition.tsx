@@ -22,6 +22,7 @@ type TransitionPhase = "idle" | "covering" | "covered" | "revealing";
 
 type RouteTransitionProviderProps = {
   children: ReactNode;
+  isInitialRevealReady?: boolean;
   onInitialRevealComplete?: () => void;
 };
 
@@ -31,16 +32,24 @@ function wait(duration: number) {
 
 export function RouteTransitionProvider({
   children,
+  isInitialRevealReady = true,
   onInitialRevealComplete,
 }: RouteTransitionProviderProps) {
   const navigate = useNavigate();
-  const [phase, setPhase] = useState<TransitionPhase>("revealing");
+  const [phase, setPhase] = useState<TransitionPhase>("covered");
   const isTransitioning = useRef(false);
+  const isInitialRevealComplete = useRef(false);
   const initialRevealTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
+    if (!isInitialRevealReady || isInitialRevealComplete.current) {
+      return;
+    }
+
+    setPhase("revealing");
     initialRevealTimeoutRef.current = window.setTimeout(() => {
       setPhase("idle");
+      isInitialRevealComplete.current = true;
       initialRevealTimeoutRef.current = null;
       onInitialRevealComplete?.();
     }, FADE_DURATION_MS);
@@ -50,7 +59,7 @@ export function RouteTransitionProvider({
         window.clearTimeout(initialRevealTimeoutRef.current);
       }
     };
-  }, [onInitialRevealComplete]);
+  }, [isInitialRevealReady, onInitialRevealComplete]);
 
   const runTransition = useCallback((action: () => void) => {
     if (isTransitioning.current) {
@@ -61,6 +70,7 @@ export function RouteTransitionProvider({
       window.clearTimeout(initialRevealTimeoutRef.current);
       initialRevealTimeoutRef.current = null;
     }
+    isInitialRevealComplete.current = true;
 
     isTransitioning.current = true;
 

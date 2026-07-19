@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
-import { SRGBColorSpace, Vector2, type Texture } from "three";
+import { useEffect, useMemo } from "react";
+import { useLoader } from "@react-three/fiber";
+import { SRGBColorSpace, TextureLoader, Vector2, type Texture } from "three";
 
 import {
   createDisplaceableCylinderTopGeometry,
   getAverageDisplacedY,
 } from "@/shared/3d/geometry";
-import { textureLoader } from "@/shared/3d/loader/texture-loader";
 import {
   DISPLACEMENT_WEIGHT_ATTRIBUTE,
   replaceDisplacementMapWithWeightedChunk,
@@ -36,6 +36,31 @@ const DISPLACEMENT_SCALE = 0.2;
 const DISPLACEMENT_WEIGHTED_PROGRAM_KEY =
   "displacement-weighted-displacement-map";
 
+function useTextureMaps(
+  diffuseMapUrl: string,
+  displacementMapUrl: string,
+  normalMapUrl: string,
+): TextureMaps {
+  const urls = useMemo(
+    () => [
+      resolvePublicAssetUrl(diffuseMapUrl),
+      resolvePublicAssetUrl(displacementMapUrl),
+      resolvePublicAssetUrl(normalMapUrl),
+    ],
+    [diffuseMapUrl, displacementMapUrl, normalMapUrl],
+  );
+  const [diffuse, displacement, normal] = useLoader(TextureLoader, urls);
+
+  // eslint-disable-next-line
+  diffuse.colorSpace = SRGBColorSpace;
+
+  return {
+    diffuse,
+    displacement,
+    normal,
+  };
+}
+
 export function TexturedPieSlice({
   diffuseMapUrl,
   displacementMapUrl,
@@ -47,7 +72,74 @@ export function TexturedPieSlice({
   thetaLength,
   thetaStart,
 }: TexturedPieSliceProps) {
-  const [textureMaps, setTextureMaps] = useState<TextureMaps | null>(null);
+  if (!diffuseMapUrl || !displacementMapUrl || !normalMapUrl) {
+    return (
+      <PieSliceMesh
+        fallbackColor={fallbackColor}
+        height={height}
+        position={position}
+        radius={radius}
+        thetaLength={thetaLength}
+        thetaStart={thetaStart}
+      />
+    );
+  }
+
+  return (
+    <TexturedPieSliceMesh
+      diffuseMapUrl={diffuseMapUrl}
+      displacementMapUrl={displacementMapUrl}
+      fallbackColor={fallbackColor}
+      height={height}
+      normalMapUrl={normalMapUrl}
+      position={position}
+      radius={radius}
+      thetaLength={thetaLength}
+      thetaStart={thetaStart}
+    />
+  );
+}
+
+type RequiredTextureMapUrls = Required<
+  Pick<
+    TexturedPieSliceProps,
+    "diffuseMapUrl" | "displacementMapUrl" | "normalMapUrl"
+  >
+>;
+
+function TexturedPieSliceMesh({
+  diffuseMapUrl,
+  displacementMapUrl,
+  normalMapUrl,
+  ...props
+}: RequiredTextureMapUrls &
+  Omit<
+    TexturedPieSliceProps,
+    "diffuseMapUrl" | "displacementMapUrl" | "normalMapUrl"
+  >) {
+  const textureMaps = useTextureMaps(
+    diffuseMapUrl,
+    displacementMapUrl,
+    normalMapUrl,
+  );
+
+  return <PieSliceMesh {...props} textureMaps={textureMaps} />;
+}
+
+function PieSliceMesh({
+  fallbackColor = DEFAULT_COLOR,
+  height = 0.22,
+  position,
+  radius = 0.95,
+  textureMaps = null,
+  thetaLength,
+  thetaStart,
+}: Omit<
+  TexturedPieSliceProps,
+  "diffuseMapUrl" | "displacementMapUrl" | "normalMapUrl"
+> & {
+  textureMaps?: TextureMaps | null;
+}) {
   const normalScale = useMemo(() => new Vector2(0.3, 0.3), []);
   const geometry = useMemo(
     () =>
@@ -92,59 +184,6 @@ export function TexturedPieSlice({
       geometry.dispose();
     };
   }, [geometry]);
-
-  useEffect(() => {
-    if (!diffuseMapUrl || !displacementMapUrl || !normalMapUrl) {
-      setTextureMaps(null);
-      return;
-    }
-
-    setTextureMaps(null);
-
-    let disposed = false;
-    let loadedTextureMaps: TextureMaps | null = null;
-
-    Promise.all([
-      textureLoader.loadAsync(resolvePublicAssetUrl(diffuseMapUrl)),
-      textureLoader.loadAsync(resolvePublicAssetUrl(displacementMapUrl)),
-      textureLoader.loadAsync(resolvePublicAssetUrl(normalMapUrl)),
-    ])
-      .then(([diffuse, displacement, normal]) => {
-        diffuse.colorSpace = SRGBColorSpace;
-        loadedTextureMaps = { diffuse, displacement, normal };
-
-        if (disposed) {
-          diffuse.dispose();
-          displacement.dispose();
-          normal.dispose();
-          return;
-        }
-
-        setTextureMaps(loadedTextureMaps);
-      })
-      .catch((error: unknown) => {
-        console.error("Failed to load pie slice textures.", {
-          diffuseMapUrl,
-          displacementMapUrl,
-          error,
-          normalMapUrl,
-        });
-
-        if (!disposed) {
-          setTextureMaps(null);
-        }
-      });
-
-    return () => {
-      disposed = true;
-
-      if (loadedTextureMaps) {
-        loadedTextureMaps.diffuse.dispose();
-        loadedTextureMaps.displacement.dispose();
-        loadedTextureMaps.normal.dispose();
-      }
-    };
-  }, [diffuseMapUrl, displacementMapUrl, normalMapUrl]);
 
   return (
     <mesh
