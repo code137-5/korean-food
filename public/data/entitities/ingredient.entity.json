@@ -17,6 +17,7 @@
       "sogogi"
     ],
     "sortOrder": 10,
+    "thumbnailImageUrl": "resources/cuisines/beef.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/beef-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/beef-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/beef-displacement.png"
@@ -39,6 +40,7 @@
       "dwaeji-gogi"
     ],
     "sortOrder": 20,
+    "thumbnailImageUrl": "resources/cuisines/pork.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/pork-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/pork-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/pork-displacement.png"
@@ -61,6 +63,7 @@
       "beef tartare"
     ],
     "sortOrder": 30,
+    "thumbnailImageUrl": "resources/cuisines/tartare.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/tartare-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/tartare-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/tartare-displacement.png"
@@ -83,6 +86,7 @@
       "chipotle meat"
     ],
     "sortOrder": 40,
+    "thumbnailImageUrl": "resources/cuisines/chipotle.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/chipotle-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/chipotle-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/chipotle-displacement.png"
@@ -106,6 +110,7 @@
       "yeoneo"
     ],
     "sortOrder": 110,
+    "thumbnailImageUrl": "resources/cuisines/salmon.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/salmon-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/salmon-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/salmon-displacement.png"
@@ -130,6 +135,7 @@
       "ikura"
     ],
     "sortOrder": 120,
+    "thumbnailImageUrl": "resources/cuisines/salmonegg.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/salmonegg-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/salmonegg-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/salmonegg-displacement.png"
@@ -152,6 +158,7 @@
       "chamchi"
     ],
     "sortOrder": 130,
+    "thumbnailImageUrl": "resources/cuisines/tuna.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/tuna-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/tuna-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/tuna-displacement.png"
@@ -176,6 +183,7 @@
       "prawn"
     ],
     "sortOrder": 140,
+    "thumbnailImageUrl": "resources/cuisines/shrimp.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/shrimp-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/shrimp-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/shrimp-displacement.png"
@@ -199,6 +207,7 @@
       "sea urchin"
     ],
     "sortOrder": 150,
+    "thumbnailImageUrl": "resources/cuisines/uni.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/uni-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/uni-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/uni-displacement.png"
@@ -223,6 +232,7 @@
       "bracken fern"
     ],
     "sortOrder": 210,
+    "thumbnailImageUrl": "resources/cuisines/gosari.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/gosari-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/gosari-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/gosari-displacement.png"
@@ -247,6 +257,7 @@
       "sigeumchi"
     ],
     "sortOrder": 220,
+    "thumbnailImageUrl": "resources/cuisines/spinach.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/spinach-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/spinach-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/spinach-displacement.png"
@@ -271,6 +282,7 @@
       "pyogo beoseot"
     ],
     "sortOrder": 310,
+    "thumbnailImageUrl": "resources/cuisines/lentinus.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/lentinus-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/lentinus-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/lentinus-displacement.png"
@@ -296,6 +308,7 @@
       "neutari beoseot"
     ],
     "sortOrder": 320,
+    "thumbnailImageUrl": "resources/cuisines/pleurotus.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/pleurotus-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/pleurotus-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/pleurotus-displacement.png"
@@ -319,6 +332,7 @@
       "baechu kimchi"
     ],
     "sortOrder": 410,
+    "thumbnailImageUrl": "resources/cuisines/kimchi.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/kimchi-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/kimchi-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/kimchi-displacement.png"
@@ -344,6 +358,7 @@
       "Korean radish"
     ],
     "sortOrder": 420,
+    "thumbnailImageUrl": "resources/cuisines/radish.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/radish-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/radish-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/radish-displacement.png"
@@ -368,6 +383,7 @@
       "sweet corn"
     ],
     "sortOrder": 430,
+    "thumbnailImageUrl": "resources/cuisines/corn.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/corn-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/corn-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/corn-displacement.png"
@@ -392,6 +408,7 @@
       "green pea"
     ],
     "sortOrder": 440,
+    "thumbnailImageUrl": "resources/cuisines/greenpea.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/greenpea-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/greenpea-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/greenpea-displacement.png"
@@ -418,6 +435,7 @@
       "dubu"
     ],
     "sortOrder": 450,
+    "thumbnailImageUrl": "resources/cuisines/tofu.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/tofu-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/tofu-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/tofu-displacement.png"
@@ -441,6 +459,7 @@
     ],
     "aliases": [],
     "sortOrder": 510,
+    "thumbnailImageUrl": "resources/cuisines/avocado.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/avocado-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/avocado-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/avocado-displacement.png"
@@ -463,6 +482,7 @@
     ],
     "aliases": [],
     "sortOrder": 520,
+    "thumbnailImageUrl": "resources/cuisines/olive.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/olive-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/olive-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/olive-displacement.png"
@@ -486,6 +506,7 @@
     ],
     "aliases": [],
     "sortOrder": 530,
+    "thumbnailImageUrl": "resources/cuisines/pineapple.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/pineapple-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/pineapple-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/pineapple-displacement.png"
@@ -511,6 +532,7 @@
       "macaroni pasta"
     ],
     "sortOrder": 610,
+    "thumbnailImageUrl": "resources/cuisines/macaroni.png",
     "diffuseMapUrl": "3d/maps/cuisines/ingredients/macaroni-diffuse.png",
     "normalMapUrl": "3d/maps/cuisines/ingredients/macaroni-normal.png",
     "displacementMapUrl": "3d/maps/cuisines/ingredients/macaroni-displacement.png"

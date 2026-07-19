@@ -10,6 +10,10 @@ import {
 const MIN_INGREDIENT_VALUE = 15;
 const MIN_EMPTY_INGREDIENT_VALUE = 0;
 
+export type BibimIngredientPieDatum = PieDatum & {
+  thumbnailImageUrl?: string;
+};
+
 export function useBibimIngredientPieChart() {
   const { t } = useTranslation("ingredient");
   const ingredientPieItems = useBibimCraftStore(
@@ -18,7 +22,7 @@ export function useBibimIngredientPieChart() {
   const setIngredientPieItemsFromChartItems = useBibimCraftStore(
     (state) => state.setIngredientPieItemsFromChartItems,
   );
-  const pieData = useMemo<PieDatum[]>(
+  const pieData = useMemo<BibimIngredientPieDatum[]>(
     () =>
       [...ingredientPieItems]
         .sort((left, right) => left.order - right.order)
@@ -26,6 +30,7 @@ export function useBibimIngredientPieChart() {
         .map((item) => ({
           id: item.ingredientId,
           name: t(item.nameKey),
+          thumbnailImageUrl: item.thumbnailImageUrl,
           value: item.value,
           fill: item.color,
         })),

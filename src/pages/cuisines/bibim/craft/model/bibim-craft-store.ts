@@ -18,6 +18,7 @@ type IngredientFlagMap = Record<IngredientId, boolean>;
 export type BibimCraftIngredientPieItem = {
   ingredientId: IngredientId;
   nameKey: string;
+  thumbnailImageUrl?: string;
   value: number;
   order: number;
   color: string;
@@ -85,6 +86,7 @@ function createIngredientPieItem(
   return {
     ingredientId: ingredient.id,
     nameKey: ingredient.nameKey,
+    thumbnailImageUrl: ingredient.thumbnailImageUrl,
     value,
     order,
     color: ingredient.color ?? DEFAULT_INGREDIENT_PIE_ITEM_COLOR,

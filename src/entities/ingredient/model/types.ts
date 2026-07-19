@@ -15,6 +15,7 @@ export type Ingredient = {
   categoryCode: IngredientCategoryCode;
   nameKey: string;
   descriptionKey?: string;
+  thumbnailImageUrl: string;
   diffuseMapUrl?: string;
   normalMapUrl?: string;
   displacementMapUrl?: string;
