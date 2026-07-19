@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 
-import * as THREE from "three";
-import { convertSceneMaterials } from "@/3d/util/convert-physical-material";
 import { useSeasonStore, type Season } from "@/entities/season";
 
 import { useShallow } from "zustand/shallow";

@@ -77,7 +77,6 @@ export function FoodDetail({ cuisineCode }: FoodDetailProps) {
     <div className="relative w-full h-full">
       <DetailPanel>
         <DetailPanelHeader
-          eyebrow={t(`badges.${detail.badgeKey}`)}
           title={t(`items.${cuisineCode}.title`)}
           subtitle={t(`items.${cuisineCode}.subtitle`)}
           marker={markerIcons[detail.markerIcon]}

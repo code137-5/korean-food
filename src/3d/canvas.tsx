@@ -1,5 +1,5 @@
 ﻿import { Canvas } from "@react-three/fiber";
-import { ContactShadows, Grid, OrbitControls } from "@react-three/drei";
+import { ContactShadows, OrbitControls } from "@react-three/drei";
 import { Suspense, useEffect, useMemo } from "react";
 import { NeutralToneMapping, PCFSoftShadowMap, SRGBColorSpace } from "three";
 

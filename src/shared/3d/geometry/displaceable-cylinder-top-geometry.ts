@@ -36,6 +36,7 @@ function getSliceHeightFactor(thetaRatio: number, thetaLength: number): number {
   return Math.sqrt(1 - (1 - normalizedDistance) ** 2);
 }
 
+/* 
 function getSliceNormal(
   thetaRatio: number,
   theta: number,
@@ -80,7 +81,7 @@ function getSliceNormal(
     normalZ / normalLength,
   ];
 }
-
+ */
 export function createDisplaceableCylinderTopGeometry({
   height = 1,
   radialSegments = 32,
@@ -105,14 +106,14 @@ export function createDisplaceableCylinderTopGeometry({
     const radiusRatio = ring / ringCount;
     const ringRadius = normalizedRadius * radiusRatio;
 
-    const baseLength = normalizedRadius * radiusRatio;
+    /* const baseLength = normalizedRadius * radiusRatio;
     const edgeCornerRadius =
       baseLength * (SLICE_EDGE_FULL_HEIGHT_ANGLE / thetaLength);
     const resultLength =
       baseLength - 2 * edgeCornerRadius + 2 * (Math.PI / 2) * edgeCornerRadius;
 
     const edgeRadiusVertexCount =
-      sliceCount * (((Math.PI / 2) * edgeCornerRadius) / resultLength);
+      sliceCount * (((Math.PI / 2) * edgeCornerRadius) / resultLength); */
     // console.log(resultLength);
     // console.log(edgeSliceRadius, resultLength);
     /* console.log(sliceCount, resultLength);
