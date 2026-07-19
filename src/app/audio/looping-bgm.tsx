@@ -13,12 +13,14 @@ function clampVolume(volume: number) {
 
 type LoopingBgmProps = {
   isEnabled: boolean;
+  isPlaying: boolean;
 };
 
-export function LoopingBgm({ isEnabled }: LoopingBgmProps) {
+export function LoopingBgm({ isEnabled, isPlaying }: LoopingBgmProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeFrameRef = useRef<number | null>(null);
   const fadeOutStartedRef = useRef(false);
+  const removeInteractionFallbackRef = useRef<(() => void) | null>(null);
   const startPlaybackRef = useRef<(() => void) | null>(null);
 
   const stopFade = useCallback(() => {
@@ -67,6 +69,7 @@ export function LoopingBgm({ isEnabled }: LoopingBgmProps) {
         window.removeEventListener(eventName, handleInteractionFallback);
       });
     };
+    removeInteractionFallbackRef.current = removeInteractionFallback;
 
     const addInteractionFallback = () => {
       INTERACTION_EVENTS.forEach((eventName) => {
@@ -127,17 +130,29 @@ export function LoopingBgm({ isEnabled }: LoopingBgmProps) {
       audio.removeEventListener("ended", handleEnded);
       audio.pause();
       audioRef.current = null;
+      removeInteractionFallbackRef.current = null;
       startPlaybackRef.current = null;
     };
   }, [fadeVolume, stopFade]);
 
   useEffect(() => {
-    if (!isEnabled) {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    if (!isEnabled || !isPlaying) {
+      removeInteractionFallbackRef.current?.();
+      stopFade();
+      audio.pause();
+      audio.volume = 0;
+      fadeOutStartedRef.current = false;
       return;
     }
 
     startPlaybackRef.current?.();
-  }, [isEnabled]);
+  }, [isEnabled, isPlaying, stopFade]);
 
   return null;
 }
