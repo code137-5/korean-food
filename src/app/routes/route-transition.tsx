@@ -26,12 +26,31 @@ function wait(duration: number) {
 
 export function RouteTransitionProvider({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
-  const [phase, setPhase] = useState<TransitionPhase>("idle");
+  const [phase, setPhase] = useState<TransitionPhase>("revealing");
   const isTransitioning = useRef(false);
+  const initialRevealTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    initialRevealTimeoutRef.current = window.setTimeout(() => {
+      setPhase("idle");
+      initialRevealTimeoutRef.current = null;
+    }, FADE_DURATION_MS);
+
+    return () => {
+      if (initialRevealTimeoutRef.current !== null) {
+        window.clearTimeout(initialRevealTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const runTransition = useCallback((action: () => void) => {
     if (isTransitioning.current) {
       return;
+    }
+
+    if (initialRevealTimeoutRef.current !== null) {
+      window.clearTimeout(initialRevealTimeoutRef.current);
+      initialRevealTimeoutRef.current = null;
     }
 
     isTransitioning.current = true;
