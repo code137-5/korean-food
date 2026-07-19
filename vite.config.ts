@@ -4,8 +4,11 @@ import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
+const base = process.env.VITE_BASE_PATH ?? "/";
+
 // https://vite.dev/config/
 export default defineConfig({
+  base,
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

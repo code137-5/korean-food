@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 
 import { useSeasonStore, type Season } from "@/entities/season";
+import { resolvePublicAssetUrl } from "@/shared/lib/url";
 
 import { useShallow } from "zustand/shallow";
 
@@ -49,7 +50,7 @@ function SeasonButton({
 }
 
 function MenuBoard() {
-  const gltf = useGLTF("/3d/items/menu_board.glb");
+  const gltf = useGLTF(resolvePublicAssetUrl("3d/items/menu_board.glb"));
 
   useEffect(() => {
     /* convertSceneMaterials(gltf.scene, {
