@@ -51,7 +51,7 @@ export function ThreeCanvas() {
           fov: 30,
           near: 0.01,
           far: 100,
-          position: [0, 1.49, 2.3],
+          position: [0, 5, 5],
         }}
       >
         <directionalLight

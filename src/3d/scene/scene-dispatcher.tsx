@@ -3,6 +3,7 @@ import {
   ThreeSceneBibimResult,
   type BibimResultSceneSlice,
 } from "@/3d/scene/bibim-result/scene-bibim-result";
+import { ThreeSceneBibim } from "@/3d/scene/bibim/scene-bibim";
 import { ThreeSceneCuisine } from "@/3d/scene/cuisine/scene-cuisine";
 import { ThreeSceneHome } from "@/3d/scene/home/scene-home";
 
@@ -16,6 +17,8 @@ export function ThreeSceneDispatcher({
   scene,
 }: ThreeSceneDispatcherProps) {
   switch (scene) {
+    case "bibim":
+      return <ThreeSceneBibim />;
     case "cuisine":
       return <ThreeSceneCuisine />;
     case "bibim.result":

@@ -10,6 +10,7 @@ function argsSetViewOffset(
 ) {
   switch (scene) {
     case "cuisine":
+    case "bibim":
       return [width, height, width / 4, -height / 7, width, height];
   }
 
