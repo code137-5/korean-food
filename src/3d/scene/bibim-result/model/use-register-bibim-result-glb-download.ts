@@ -2,6 +2,7 @@ import { useCallback, useEffect, type RefObject } from "react";
 import type { Group } from "three";
 
 import { useBibimResultExportStore } from "@/pages/cuisines/bibim/craft/result/model/bibim-result-export-store";
+import { createDisplacementBakedExportObject } from "../lib/create-displacement-baked-export-object";
 import { exportObjectAsGlb } from "../lib/export-object-as-glb";
 
 export function useRegisterBibimResultGlbDownload(
@@ -15,7 +16,9 @@ export function useRegisterBibimResultGlbDownload(
       return;
     }
 
-    await exportObjectAsGlb(groupRef.current);
+    const exportObject = createDisplacementBakedExportObject(groupRef.current);
+
+    await exportObjectAsGlb(exportObject);
   }, [groupRef]);
 
   useEffect(() => {
