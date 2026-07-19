@@ -2,7 +2,9 @@ import "@/app/App.css";
 import { ThreeCanvas } from "@/3d/canvas";
 import { Outlet } from "react-router-dom";
 import { LanguageToggle } from "@/app/ui/language-toggle";
+import { LoopingBgm } from "@/app/audio/looping-bgm";
 import { RouteTransitionProvider } from "@/app/routes/route-transition";
+import { useCallback, useState } from "react";
 
 function RoutedWidgets() {
   return (
@@ -18,8 +20,16 @@ function RoutedWidgets() {
 }
 
 function App() {
+  const [isBgmEnabled, setIsBgmEnabled] = useState(false);
+  const handleInitialRevealComplete = useCallback(() => {
+    setIsBgmEnabled(true);
+  }, []);
+
   return (
-    <RouteTransitionProvider>
+    <RouteTransitionProvider
+      onInitialRevealComplete={handleInitialRevealComplete}
+    >
+      <LoopingBgm isEnabled={isBgmEnabled} />
       <RoutedWidgets />
       <div className="relative w-screen h-screen">
         <ThreeCanvas />

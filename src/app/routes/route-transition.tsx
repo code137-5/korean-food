@@ -20,11 +20,19 @@ const COVERED_DURATION_MS = 1000;
 
 type TransitionPhase = "idle" | "covering" | "covered" | "revealing";
 
+type RouteTransitionProviderProps = {
+  children: ReactNode;
+  onInitialRevealComplete?: () => void;
+};
+
 function wait(duration: number) {
   return new Promise((resolve) => window.setTimeout(resolve, duration));
 }
 
-export function RouteTransitionProvider({ children }: { children: ReactNode }) {
+export function RouteTransitionProvider({
+  children,
+  onInitialRevealComplete,
+}: RouteTransitionProviderProps) {
   const navigate = useNavigate();
   const [phase, setPhase] = useState<TransitionPhase>("revealing");
   const isTransitioning = useRef(false);
@@ -34,6 +42,7 @@ export function RouteTransitionProvider({ children }: { children: ReactNode }) {
     initialRevealTimeoutRef.current = window.setTimeout(() => {
       setPhase("idle");
       initialRevealTimeoutRef.current = null;
+      onInitialRevealComplete?.();
     }, FADE_DURATION_MS);
 
     return () => {
@@ -41,7 +50,7 @@ export function RouteTransitionProvider({ children }: { children: ReactNode }) {
         window.clearTimeout(initialRevealTimeoutRef.current);
       }
     };
-  }, []);
+  }, [onInitialRevealComplete]);
 
   const runTransition = useCallback((action: () => void) => {
     if (isTransitioning.current) {
